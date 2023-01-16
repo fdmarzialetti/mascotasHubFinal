@@ -11,12 +11,10 @@
    
 }
 .pie-pagina .grupo-1{
-    max-width: 1200px;
-    margin: auto;
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap:50px;
-    padding: 45px 0px;
+ 
+    padding: 25px 0px; 
+    display: flex;
+    justify-content: space-evenly;
 }
 
 
@@ -101,7 +99,7 @@ align-items: center;}
         width: 90%;
         grid-template-columns: repeat(1, 1fr);
         grid-gap:30px;
-        padding: 35px 0px;
+        padding: 15px 0px;
         display: flex;
         flex-direction: column;
         align-items: center;
