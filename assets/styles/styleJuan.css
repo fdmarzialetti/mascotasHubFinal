@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -8,10 +12,13 @@
 
 .home-box-title {
     background-image: url(../images/front-view-of-beautiful-dog-with-copy-space.jpg);
-    background-position: center;
+    background-position: initial;
     background-size: cover;
     background-repeat: no-repeat;
+    height: 40vh;
+
 }
+
 
 .home-box-section-title {
 
@@ -22,17 +29,23 @@
 
 }
 
-
-.home-box-section-title img {
-    height: 13vh;
-}
-
 .home-title {
-    width: 60vw;
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bolder;
+    font-size: 7vw;
+    color: #333333;
+    text-shadow: 2px 3px 0px #FFFFFF, 5px 4px 0px rgba(0, 0, 0, 0.15);
 }
+
+
 
 .home-slogan {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 2.5vw;
+    font-weight: bolder;
     text-align: center;
+    font-family: 'Amaranth', sans-serif;
+
 }
 
 
@@ -54,7 +67,12 @@
     align-items: center;
     text-align: center;
     gap: 3rem;
+}
 
+.home-textOurs h2 {
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bolder;
+    font-size: 3rem;
 }
 
 .home-img-history {
@@ -69,9 +87,11 @@
 }
 
 
-.home-box-brands h3 {
-
+.home-brands-h3 {
+    font-family: 'Amaranth', sans-serif;
+    font-size: 2rem;
     text-align: center;
+
 
 }
 
@@ -88,15 +108,108 @@
 
 .home-sucursales {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: orange;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 1rem;
 }
 
-.home-img-sucurcales {
-    height: 25vh;
-    width: 15rem;
+.home-locales {
+    background-image: url(https://muchosnegociosrentables.com/wp-content/uploads/2020/10/franquicias-de-tiendas-para-mascotas.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 20rem;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
+
+.home-locales .home-click {
+    padding-bottom: 0.3rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    background-color: rgba(255, 166, 0, 0.766);
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-shadow: 5px 5px 5px black;
+    border: none;
+}
+
+.home-locales h2 {
+    background-color: rgba(255, 166, 0, 0.738);
+    width: 100%;
+    text-align: center;
+}
+
+.home-jugueteria {
+    background-image: url(https://muchosnegociosrentables.com/wp-content/uploads/2015/08/Juguetes-en-pet-shop.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 20rem;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.home-jugueteria a {
+    padding-bottom: 0.3rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    background-color: rgba(255, 166, 0, 0.726);
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-shadow: 5px 5px 5px black;
+}
+
+.home-jugueteria h2 {
+    background-color: rgba(255, 166, 0, 0.737);
+    font-size: 1.9rem;
+    height: 5.5vh;
+    width: 100%;
+    text-align: center;
+}
+
+.home-farmacia {
+    background-image: url(https://pr1.nicelocal.com.mx/hrbIlCs6xbIm9SCHdKQgSg/640x359,q85/4px-BW84_n0QJGVPszge3NRBsKw-2VcOifrJIjPYFYkOtaCZxxXQ2Tuz1gKcZSZ3W7VyzWaMp-GbfOIBP5PUD-p5qO73bxzaL4pCyjKUtfMnWXUqPGwc1g);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 20rem;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.home-farmacia a {
+    padding-bottom: 0.3rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    background-color: rgba(255, 166, 0, 0.864);
+    color: white;
+    width: 100%;
+    text-align: center;
+    text-shadow: 5px 5px 5px black;
+}
+
+.home-farmacia h2 {
+    background-color: rgba(255, 166, 0, 0.797);
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
 
 .home-boton {
     padding: 1rem;
@@ -121,22 +234,40 @@
     padding-bottom: 8rem;
 }
 
+.home-youtube-fondo {
+    margin-top: 4rem;
+    background-image: url(../images/flat-lay-of-toys-with-food-bowl-and-fur-brush-for-dogs.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+.home-youtube-fondo h2 {
+    /* font-family: 'Amaranth', sans-serif; */
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 4rem;
+    font-weight: bolder;
+    text-shadow: 2px 3px 0px #ffffff, 5px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
 .home-youtube {
     padding-bottom: 4rem;
     height: 60vh;
     width: 45vw;
 }
 
-.home-maps {
-
-    height: 80vh;
-    width: 60vw;
+.home-box-brands h3 {
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bolder;
+    font-size: 3rem;
 }
+
 
 .home-dir-sucursales {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 #iframe-map iframe {
@@ -150,9 +281,6 @@
         width: 70vw;
     }
 
-    .home-box-brands h3 {
-        width: 70vw;
-    }
 
     .home-img-history {
         width: 80vw;
@@ -160,6 +288,10 @@
 
     .home-textOurs {
         width: 70vw;
+    }
+
+    .home-maps {
+        height: 50vh;
     }
 
 }
@@ -171,7 +303,15 @@
     }
 
     .home-title {
-        width: 80vw;
+        margin-top: -2rem;
+        padding-left: 0.5rem;
+        font-size: 3.5rem;
+        text-align: center;
+    }
+
+    .home-slogan {
+        font-size: 1.5rem;
+        text-align: center;
     }
 
     .home-img-carusel {
@@ -184,13 +324,23 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        width: 90%;
     }
 
     .home-box-title {
-        display: flex;
-        justify-content: center !important;
+
         background-position: inherit;
+
     }
+
+    .home-box-section-title {
+        width: 95%;
+    }
+
+    .home-size-cel{
+        width: 100%;
+    }
+
 
 
 
