@@ -35,7 +35,7 @@
         align-items: unset;
     }
     .navBarForm-control{
-        width: 400px;
+        width: 100px;
     }
     .navbar-collapse a{
         text-decoration: none;
@@ -55,8 +55,6 @@
     .navBarcontainer-fluid-2{
         background-color: rgba(0, 0, 0, 0.579);
         height: 45px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
     }
     .navbar-collapse a:hover{
         background-color: rgba(255, 255, 255, 0.633);
@@ -64,8 +62,6 @@
     border-right: 1px solid black;
     color: black !important;
     border-radius: 2px;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
     }
     .navbar-expand-lg{
         width: 100%;
@@ -82,10 +78,13 @@
         margin: 0px !important;
     }
     .navBarForm-control{
-        width: 20rem;
+        width: 10rem;
     }
     .padre-buscadorNav{
         width: 22em;
+    }
+    .nav img{
+        margin-left: 200px !important;
     }
 }
 .nav-bar-items{
@@ -97,7 +96,7 @@
         margin-left: 80px;
     }
     .navBarForm-control{
-        width: 300px;
+        width: 100px;
         margin-left: 60px;
         margin-bottom: 20px;
     }
@@ -158,7 +157,7 @@
         margin-right: 0;
     }
     .navBarForm-control{
-        width: 450px;
+        width: 150px;
         margin-left: 0;
     } 
     .nav-bar-items{
@@ -179,4 +178,11 @@
 
 .section-navBar img{
     width: 250px;
+}
+.lupa-buscador{
+    background-color: #0eb360;
+    width: 45px;
+}
+.lupa-buscador:hover{
+    background-color: rgba(0, 255, 4, 0.499);
 }
