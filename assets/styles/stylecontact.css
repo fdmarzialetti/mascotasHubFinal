@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contact__h1{
+    text-align: center;
+}
+.titulo__contact{
+    height: 35vh;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.247);
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/beach-mascotas.jpg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: 100%;
+   
+    object-fit: contain;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.9rem;
+    color: white;
+
+}
+.main__contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: .6rem;
+}
+.main__contact div{
+    display: flex;
+}
+.contact__a{
+    text-decoration: none;
+    color:black;
+}
+.contact__a:hover{
+    color: #00A9E0;
+}
+.contact__checkbox{
+    display: flex;
+    flex-direction: column;
+}
+.contact__container__information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    
+}
+.contact__container__information section{
+    border: 1px solid #00A9E0;
+     padding: 1rem; 
+    gap: 1rem;
+    background-color: #f0faff;
+}
+.contact__container__information div{
+    display: flex;
+     gap:1rem;
+} 
+.contact__container__informationII{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.contact__container__informationII section{
+    border: 1px solid #00A9E0;
+    padding: 1rem;
+    width: 50%;
+    display: flex;
+    gap: 1rem;
+    background-color: #f0faff;
+    
+}
+.contact_-section{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.contact__h2{
+    color:#00A9E0;
+    text-align: center;
+    padding: 2rem;
+}
+.contact__h3{
+    text-align: center;
+}
+.contact__section__Questions{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    height: 20vh;
+    font-size: 1.5rem;
+    gap: 1rem;
+    color: #4B4B4B;
+    background-color: #f0faff;
+   height: 40vh;
+   
+    
+}
+.contact__section__Questions a{
+    margin:0rem 3rem;
+    text-align: left;
+    
+    width: 35rem;
+    border: 1px solid #00A9E0;
+    border-radius: .5rem;
+    padding: 1rem;
+    
+    
+}
+.contact__section__Questions a:hover{
+    background-color: white;
+    color:#313131;
+    box-shadow:#00A9E0 0px 5px 15px;
+}
+.contact__main__bottom{
+    display: flex;
+    flex-direction: column;
+    gap:3rem;
+    justify-content: center;
+    align-items: center;
+}
+.contact__button__contact {
+    background-color: #313131;
+    padding: 1rem;
+    color:white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 2rem;
+    width: 17rem;
+}
+.contact__button__contact:hover{
+    color: white;
+}
+.contact__span{
+    color: green;
+}
+.contact__button__mail{
+    background-color: #00A9E0;
+    padding: 1rem;
+    color:white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: .5rem;
+    width: 15rem;
+}
+.contact__button__mail:hover{
+    color: white;
+    
+}
+
+.contact__container__bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.contact__input__mail{
+    width: 20rem;
+    padding: .9rem;
+    border-radius: 2rem;
+}
+.contact__input__mail:hover{
+    border:3px solid #00A9E0;
+    box-shadow:#00A9E0 0px 5px 15px;
+}
+.contact__input__submit{
+    color: white;
+    background-color: #E6405D;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    border-radius: 2rem;
+    border: none;
+    
+}
+.contact__input__submit:hover{
+    background-color: crimson;
+}
+.contact__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}
+.contact__form div{
+    display: flex;
+    gap: 1rem;
+}
+
+@media only screen and (min-width: 300px) and (max-width:1200px){
+    .contact__section__Questions{
+        display: none;
+    }
+     .contact__container__information{
+       flex-wrap: wrap;
+    } 
+    .contact__container__bottom div{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+        min-height: 30vh; 
+        
+    }
+
+}
+@media only screen and (min-width: 300px) and (max-width:675px){
+.contact__form  div{
+    flex-direction: column;
+}
+.contact__container__information{
+    display: none;
+}
+}
+@media only screen and (min-width: 300px) and (max-width:337px){
+    .contact__input__mail{
+        width: 14rem;
+    }
+}
