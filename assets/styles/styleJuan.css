@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&family=Fira+Sans&display=swap');
 * {
     box-sizing: border-box;
     padding: 0;
@@ -11,7 +12,11 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    height: 50vh;
+   
 }
+
+
 
 .home-box-section-title {
 
@@ -24,15 +29,19 @@
 
 
 .home-box-section-title img {
-    height: 13vh;
+    height: 25vh;
 }
 
 .home-title {
     width: 60vw;
 }
 
+
+
 .home-slogan {
     text-align: center;
+    font-family: 'Amaranth', sans-serif;
+
 }
 
 

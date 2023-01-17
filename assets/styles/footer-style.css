@@ -27,6 +27,7 @@
     color: #efefef;
     margin-bottom: 5px;
 }
+
 .pie-pagina .grupo-1 .red-social a{
     display: inline-block;
     text-decoration: none;
@@ -71,8 +72,32 @@ align-items: center;}
     justify-content: space-evenly;
 } 
 
-.footer-container p{
-    margin: 8px 0;
+.footer-container{display: flex;
+flex-direction: column;
+gap:1vh;}
+
+.box a{
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    
+}
+
+.box a:hover{
+    color: rgb(15, 245, 233);
+    text-shadow: 2px 1px 20px #fff;
+}
+
+.footer-container a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-container a:hover{
+    color: rgb(15, 245, 233);
+    text-shadow: 2px 1px 20px #fff;
 }
 
 .icons-card{
