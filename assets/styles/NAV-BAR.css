@@ -35,7 +35,7 @@
         align-items: unset;
     }
     .navBarForm-control{
-        width: 100px;
+        width: 200px !important;
     }
     .navbar-collapse a{
         text-decoration: none;
@@ -53,29 +53,24 @@
         width: 100%;
     }
     .navBarcontainer-fluid-2{
-        background-color: rgba(0, 0, 0, 0.579);
+        background-color: rgba(0, 0, 0, 0.722);
         height: 45px;
     }
     .navbar-collapse a:hover{
-        background-color: rgba(255, 255, 255, 0.633);
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    color: black !important;
+        background-color: rgba(255, 255, 255, 0.218);
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255) !important;
     border-radius: 2px;
     }
     .navbar-expand-lg{
         width: 100%;
         height: 45px;
-        background-image: url(https://i.pinimg.com/originals/a5/9e/85/a59e8573372d5f53ba1281714f34e52a.jpg);
+        background-image: url(https://tse2.mm.bing.net/th?id=OIP.QcZoHGJEHJzcVtPsQXrpqAHaEK&pid=Api&P=0);
         background-position: center;
-        background-size: cover;
+        background-size: contain;
         margin: 0;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.418);
-    }
-    .nav-bar-items{
-        margin: 0px !important;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.711);
     }
     .navBarForm-control{
         width: 10rem;
@@ -84,16 +79,18 @@
         width: 22em;
     }
     .nav img{
-        margin-left: 200px !important;
+        margin-left: 100px !important;
     }
 }
 .nav-bar-items{
     margin-top: 10px !important;
 }
 @media (max-width: 487px){
-    .section-navBar img{
-        width: 250px;
-        margin-left: 80px;
+    .nav-bar-items{
+        margin-bottom: 20px;
+    }
+    .nav img{
+        width: 350px;
     }
     .navBarForm-control{
         width: 100px;
@@ -105,13 +102,12 @@
     }
     .nav-bar-items a i{
         transition: all 1.5s;
-        font-size: 25px;
-        margin-left: 30px;
-        color:#000000 ;
+        font-size: 20px;
+        margin-left: 10px;
     }
 } 
 @media (max-width: 991px){
-    headerNavBar{
+    .headerNavBar{
         display: flex;
         flex-direction: column;
     }
@@ -121,24 +117,31 @@
         border-radius: 10px;
     }
     .navbar-collapse{
+        display: flex;
+        justify-content: center;
         border: solid rgba(4, 242, 107, 0);
-        background-image: url(https://image.freepik.com/vector-gratis/fondo-patron-huesos-huellas_1374-18.jpg);
+        background-image: url(); 
         background-position: center;
         background-size: cover;
         padding: 0px;
         border-radius: 10px;
     }
     .nav-bar-a{
-        color: rgb(255, 255, 255) !important;
+        color: rgb(0, 0, 0) !important;
         display: inline-block !important;
-        background-color: rgba(0, 0, 0, 0.622);
-        padding-left: 20px;
+        background-color: rgba(0, 0, 0, 0);
+        padding-left: 150px;
+        padding-right: 150px;
         padding-bottom: 5px;
         padding-top: 8px;
         margin: 0px;
         height: 100%;
         font-family: 'Gill Sans';
         font-size: 25px;
+        text-decoration: none;
+    }
+    .nav-bar-a:hover{
+        background-color: rgba(24, 136, 30, 0.432);
     }
     .navBarHome{
         border-top-left-radius: 10px;
@@ -157,22 +160,31 @@
         margin-right: 0;
     }
     .navBarForm-control{
-        width: 150px;
-        margin-left: 0;
+        width: 450px !important;
+        height: 60px;
     } 
     .nav-bar-items{
         margin-right: 100px !important;
     }
-    .navbar-nav a{
+    .navbar-nav a i{
         margin-left: 100px;
         margin-right: 100px;
-        font-size: 30px;
+        font-size: 40px;
     }
     .navbar-expand-lg{
         height: 55px;
     }
     .navBarcontainer-fluid-2{
         height: 55px;
+    }
+    .nav {
+        justify-content: space-between;
+    }
+    .nav img{
+        width: 500px !important;
+    }
+    .nav-bar-items a i{
+        font-size: 30px;
     }
 }
 
@@ -185,4 +197,173 @@
 }
 .lupa-buscador:hover{
     background-color: rgba(0, 255, 4, 0.499);
+}
+@media (max-width: 645px){
+    .nav{
+        justify-content: center;
+    }
+    .navBarForm-control{
+        width: 150px;
+    }
+    .lupa-buscador{
+        height: 40px;
+    }
+    .nav-bar-items a i{
+        font-size: 20px;
+    }
+    .nav-bar-items a{
+        margin-left: 2px !important;
+        margin-right: 5px;
+    }
+
+}
+
+
+
+             /* NAV 2 ========================================================================================== NAV 2 */
+.nav2 img{
+    width: 250px;
+    margin-left:0px;
+}
+.nav2{
+    display: flex;
+    align-items: center;
+    background-color: rgba(91, 91, 91, 0);
+}
+.contenedor-de-ancors-nav2{
+    font-size: 20px;
+    margin: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    ;
+}
+.contenedor-de-ancors-nav2 a{
+    margin-left: 0px;
+    margin-right: 0px;
+    color: black !important;
+    background-color: none;
+    padding: 5px;
+}
+.navBar2{
+    background-image: none;
+    box-shadow: none;
+}
+.collapse-navbar2{
+    background-color: none;
+}
+.nav-bar-items-nav2 a i{
+    transition: all 1.5s;
+    font-size: 22px;
+    margin-left: 30px;
+    color:#16a95da8 ;
+}
+.nav-bar-items-nav2 a i:hover{
+    transform: rotate(360deg);
+    color: rgb(208, 0, 0);
+    border: none;
+}
+.nav-bar-items-nav2 a:hover{
+    border: none;
+}
+.nav-bar-items-nav2 a{
+    margin: 0px;
+}
+.contenedor-de-ancors-nav2 a:hover{
+    background-color: #00000043;
+    border: none;
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
+    color: white !important;
+}
+.contenedor-de-ancors-nav2{
+    background-image: url(https://tse2.mm.bing.net/th?id=OIP.QcZoHGJEHJzcVtPsQXrpqAHaEK&pid=Api&P=0);
+    background-size: contain;
+}
+.contenedor-de-ancors-nav2 a{
+    color:white !important ; 
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px;
+}
+.contenedor-de-ancors-nav2 .nav-bar-a-nav2{
+ background-color: rgba(0, 0, 0, 0.71);
+} 
+.contenedor-de-ancors-nav2 .nav-bar-a-nav3{
+    background-color: rgba(0, 0, 0, 0.71);
+} 
+.contenedor-de-ancors-nav2 .nav-bar-a-nav4{
+    background-color: rgba(0, 0, 0, 0.71);
+} 
+.contenedor-de-ancors-nav2 .nav-bar-a-nav5{
+    background-color: rgba(0, 0, 0, 0.71);
+} 
+.contenedor-de-ancors-nav2 .nav-bar-a-nav6{
+    background-color: rgba(0, 0, 0, 0.71);
+} 
+.collapse-navbar2{
+    justify-content: space-evenly;
+}
+@media (max-width: 991px){
+    .nav2{
+        justify-content: space-evenly;
+    }
+}
+@media (max-width: 990px){
+    .contenedor-de-ancors-nav2{
+        background-image: none;
+    }
+    .contenedor-de-ancors-nav2 .nav-bar-a-nav2{
+        background-color: rgba(0, 251, 255, 0);
+       } 
+       .contenedor-de-ancors-nav2 .nav-bar-a-nav3{
+        background-color: rgba(0, 251, 255, 0);
+       }
+       .contenedor-de-ancors-nav2 .nav-bar-a-nav4{
+        background-color: rgba(0, 251, 255, 0);
+       }
+       .contenedor-de-ancors-nav2 .nav-bar-a-nav5{
+        background-color: rgba(0, 251, 255, 0);
+       }
+       .contenedor-de-ancors-nav2 .nav-bar-a-nav6{
+        background-color: rgba(0, 251, 255, 0);
+       }
+       .contenedor-de-ancors-nav2 a{
+        text-decoration: none;
+        color: black !important;
+       }
+       .contenedor-de-ancors-nav2{
+        border: none;
+       }
+       .collapse-navbar2{
+        display: flex;
+        align-items: center;
+        background-image: none;
+        justify-content: space-between;
+       }
+       .contenedor-de-ancors-nav2 a:hover{
+        border: none;
+        background-color: rgba(24, 136, 30, 0.432);
+        border-radius: none;
+        color: black !important;
+       }
+       .nav-bar-items-nav2{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+       }
+}
+@media (max-width: 595px){
+    .nav2{
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav2 img{
+        width: 250px;
+        margin: 0px;
+    }
+}
+.navBarForm-control{
+    width: 300px !important;
 }
