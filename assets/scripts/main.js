@@ -6,7 +6,9 @@ createApp({
             productos: [],
             carrito: [],
             datos: [],
-            modalCategoria:"todas",
+            valorBusqueda:"",
+            modelCategoria:"todas",
+            modelPrecio:[],
             loadData: true
         }
     },
@@ -27,6 +29,9 @@ createApp({
 
     },
     methods: {
+        probar:function(){
+            console.log(this)
+        },
         cargaPorPagina: function () {
             let cargaProductos = JSON.parse(localStorage.getItem("carrito"))
             let setId = cargaProductos.map(c => c._id)
@@ -37,7 +42,7 @@ createApp({
             })
             cargaProductos.sort((p1, p2) => p2._id - p1._id)
             const titulo = document.querySelector('title')
-            if (titulo.innerText.toLowerCase().includes('inicio')) {
+            if (titulo.innerText.toLowerCase().includes('productos')) {
                 this.datos = cargaProductos
             } else if (titulo.innerText.toLowerCase().includes('farmacia')) {
                 this.datos = cargaProductos.filter(p => p.categoria === "farmacia")
@@ -45,17 +50,22 @@ createApp({
                 this.datos = cargaProductos.filter(p => p.categoria === "jugueteria")
             }
         },
-        filtroPorSeleccion(){
-            if (this.modalCategoria!=="todas") {
-                this.datos=this.productos.filter(p=>p.categoria===this.modalCategoria)
+        filtroPorCategoria(){
+            if (this.modelCategoria!=="todas") {
+                this.datos=this.productos.filter(p=>p.categoria===this.modelCategoria)
             }else{
                 this.datos=this.productos
             }
         },
-        filtro:function(){
-            // let filtro = 
-            this.filtroPorSeleccion()
-            // this.datos=filtro.filter(p=>p.precio<=this.modalPrecioMenor)
+        filtroPorPrecio:function(lista){
+            if(this.modelPrecio.includes("hastaMil")){
+                lista.filter(p=>p.precio<=1000)
+            }
+            return lista
+        },
+        filtro: function () {
+            let filtroPorBusqueda = this.productos.filter(p => p.producto.toLowerCase().includes(this.valorBusqueda.toLowerCase()))
+            this.datos=filtroPorBusqueda
         },
         quitarDelCarrito: function (producto) {
             if (this.carrito.some(p => p._id === producto._id)) {
