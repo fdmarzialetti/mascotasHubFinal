@@ -1,0 +1,27 @@
+*{margin:0;
+padding: 0;
+box-sizing: border-box;}
+
+
+#detailed-card{
+    border: 3px solid black;
+    border-radius: 10px;
+    background-image: url(../images/carta-fondo2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: monospace;
+}
+
+.btn:hover{
+    background-color: rgb(12, 173, 237);
+    color: white;
+    font-weight: bold;
+}
+
+@media (max-width:575px){
+    #detailed-card{
+      
+    }
+}
+

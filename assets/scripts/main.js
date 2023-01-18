@@ -13,7 +13,9 @@ createApp({
             cantidadEnCarrito:0,
             modelPrecios:"vacio",
             loadData: false,
-            totalPrecio:0
+            totalPrecio:0,
+            idDetalle:"",
+            productoDetalle:undefined
         }
     },
     created() {
@@ -23,19 +25,27 @@ createApp({
                 this.productos = data
                 this.datos = this.productos.forEach(p => p.cantidad = 0)
                 this.cargaPorPagina()
+                this.idDetalle=new URLSearchParams(location.search).get("id")
+                this.productoDetalle = this.datos.find(e => e._id === this.idDetalle)
                 loadData = true
             })
         if (JSON.parse(localStorage.getItem("carrito"))) {
             this.carrito = JSON.parse(localStorage.getItem("carrito"))
         } else {
             localStorage.setItem("carrito", JSON.stringify(this.carrito))
-        }
-        
+        }    
     },
     beforeMount(){
         this.calcularCantidad()
     },
     methods: {
+        calcularPrecioTotal:function(){
+            let total=0
+            this.carrito.forEach(p=>{
+                total+=p.precio*p.cantidad
+            })
+            this.totalPrecio=total
+        },
         calcularCantidad:function(){
             let carritoLocal = JSON.parse(localStorage.getItem("carrito"))
             let total=0
@@ -139,6 +149,7 @@ createApp({
                 localStorage.setItem("carrito", JSON.stringify(this.carrito))
             }
             this.calcularCantidad()
+            this.calcularPrecioTotal()
         },
         agregarAlCarrito: function (producto) {
             if (producto.disponibles > 0) {
@@ -151,6 +162,7 @@ createApp({
             localStorage.setItem("carrito", JSON.stringify(this.carrito))
             datosLocales = JSON.parse(localStorage.getItem("carrito"))
             this.calcularCantidad()
+            this.calcularPrecioTotal()
         }
     }
 }).mount('#app')
