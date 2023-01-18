@@ -12,7 +12,7 @@
     background-color: rgba(0, 0, 0, 0.247);
     justify-content: center;
     align-items: center;
-    background-image: url(../images/beach-mascotas.jpg);
+    background-image: url(../images/centro__atencion__cliente.jpg);
     background-repeat: no-repeat;
     background-position:center;
     background-size: 100%;
@@ -20,8 +20,17 @@
     object-fit: contain;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 1.9rem;
-    color: white;
+    color:black;
+    font-weight: bolder;
+    
 
+}
+.contact__supertitulo{
+    font-weight: bolder;
+    color:white;
+     background-color: rgba(0, 0, 0, 0.322); 
+    border-radius: 5px;
+    padding: .5rem;
 }
 .main__contact{
     display: flex;
@@ -37,7 +46,7 @@
     color:black;
 }
 .contact__a:hover{
-    color: #00A9E0;
+    color: #FFA600CB;
 }
 .contact__checkbox{
     display: flex;
@@ -52,7 +61,7 @@
     
 }
 .contact__container__information section{
-    border: 1px solid #00A9E0;
+    border: 1px solid #FFA600CB;
      padding: 1rem; 
     gap: 1rem;
     background-color: #f0faff;
@@ -69,7 +78,7 @@
 }
 
 .contact__container__informationII section{
-    border: 1px solid #00A9E0;
+    border: 1px solid #FFA600CB;
     padding: 1rem;
     width: 50%;
     display: flex;
@@ -84,9 +93,10 @@
     
 }
 .contact__h2{
-    color:#00A9E0;
+    color:#5f4719;
     text-align: center;
     padding: 2rem;
+    font-weight: bolder;
 }
 .contact__h3{
     text-align: center;
@@ -110,7 +120,7 @@
     text-align: left;
     
     width: 35rem;
-    border: 1px solid #00A9E0;
+    border: 1px solid #FFA600CB;
     border-radius: .5rem;
     padding: 1rem;
     
@@ -119,7 +129,7 @@
 .contact__section__Questions a:hover{
     background-color: white;
     color:#313131;
-    box-shadow:#00A9E0 0px 5px 15px;
+    box-shadow:#FFA600CB 0px 5px 15px;
 }
 .contact__main__bottom{
     display: flex;
@@ -130,30 +140,45 @@
 }
 .contact__button__contact {
     background-color: #313131;
-    padding: 1rem;
-    color:white;
+    padding:1rem;
+    padding-left: 0;
     text-decoration: none;
-    font-size: 1.3rem;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 2rem;
-    width: 17rem;
+    width: 17rem; 
+    color:green;
+    list-style: inside;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
 }
-.contact__button__contact:hover{
+ .contact__button__contact:hover{
+    color:green;
+    background-color: black;
+} 
+ .contact__li{
+    font-size: 1rem;
+    color: green;
+} 
+.contact__button__agent{
     color: white;
-}
+}   
+
 .contact__span{
     color: green;
 }
 .contact__button__mail{
-    background-color: #00A9E0;
+    background-color: #ffa600fb;
     padding: 1rem;
-    color:white;
+    color:black;
     text-decoration: none;
     font-size: 1.3rem;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: .5rem;
     width: 15rem;
 }
+
 .contact__button__mail:hover{
     color: white;
     
@@ -172,12 +197,12 @@
     border-radius: 2rem;
 }
 .contact__input__mail:hover{
-    border:3px solid #00A9E0;
-    box-shadow:#00A9E0 0px 5px 15px;
+    border:3px solid #FFA600CB;
+    box-shadow:#FFA600CB 0px 5px 15px;
 }
 .contact__input__submit{
-    color: white;
-    background-color: #E6405D;
+    color:black;
+    background-color: #ffa600;
     padding: 1rem 3rem;
     cursor: pointer;
     border-radius: 2rem;
@@ -186,6 +211,7 @@
 }
 .contact__input__submit:hover{
     background-color: crimson;
+    color: white;
 }
 .contact__form{
     display: flex;
@@ -199,8 +225,58 @@
     display: flex;
     gap: 1rem;
 }
+.main__respuesta_contact{
+    display: flex;
+    padding: 1rem;
+    
+}
+.respuesta__aside{
+    
+    width: 60rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+.respuesta__titulo{
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/centro__atencion__cliente.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 300%;
+    background-position:center;
+    margin: 1rem 0 1rem 0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    color: black;
+    
+}
+.respuesta__aside a{
+    text-decoration: none;
+    color: black;
+}
+.respuesta__span{
+    color:#ffa600;
+}
+.respuesta__active{
+    background-color: #FFA600CB;
+    border-radius: 5px;
+    padding: 3px;
+    font-weight:600;
+    
+}
+.respuesta__body{
+    padding: 1rem;
+    
+}
+.respuesta__subtitulo{
+    font-size: 2rem;
+}
+  
 
-@media only screen and (min-width: 300px) and (max-width:1200px){
+@media only screen and (min-width: 300px) and (max-width:1350px){
     .contact__section__Questions{
         display: none;
     }
@@ -215,14 +291,25 @@
         min-height: 30vh; 
         
     }
+    .contact_-section{
+        display: none;
+    }
 
 }
 @media only screen and (min-width: 300px) and (max-width:675px){
-.contact__form  div{
+.contact_-section{
+    display: none;
+}
+    .contact__form  div{
     flex-direction: column;
 }
 .contact__container__information{
     display: none;
+    
+}
+.main__respuesta_contact{
+    display: flex;
+    flex-direction: column;
 }
 }
 @media only screen and (min-width: 300px) and (max-width:337px){
