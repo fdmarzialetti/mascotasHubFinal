@@ -20,22 +20,13 @@
 
 <body id="app" class="body-color d-flex flex-column">
     <header class="headerNavBar">
-        <section class="section-navBar">
+        <section class="section-navBar" >
             <div class="nav">
                 <img src="./assets/images/mascotas.png" alt="">
-                <nav class="navbar navbar-light padre-buscadorNav">
-                    <div class="container-fluid">
-                        <form class="d-flex">
-                            <input class="form-control navBarForm-control me-2" type="search" placeholder="Search"
-                                aria-label="Search">
-                        </form>
-                    </div>
-                </nav>
                 <div class="nav-bar-items" id="carroDeCompras">
                     <a href="" data-bs-toggle="modal" data-bs-target="#myModal">
-                        
                         <i class="fa-solid fa-cart-shopping">
-                            <span v-if="cantidadEnCarrito>0&&loadData"class="badge rounded-pill bg-danger">{{cantidadEnCarrito}}</span>
+                            <span v-if="cantidadEnCarrito>0" class="badge rounded-pill bg-danger">{{cantidadEnCarrito}}</span>
                         </i>
                     </a>
                     <a href=""><i class="fa-solid fa-user"></i></a>
@@ -74,9 +65,7 @@
             <section class="d-flex justify-content-start home-box-section-title">
 
                 <div class="d-flex flex-column align-items-center">
-                    <h1 class="home-title">Bienvenidos a +COTAS</h1>
-                    <h3 class="home-slogan">El petshop donde encontras todo para tu mascota</h3>
-
+                    <h1 class="home-title ps-sm-5">Nuestros Productos</h1>
                 </div>
             </section>
         </div>
@@ -134,44 +123,45 @@
                     <div class="d-flex col-12 col-sm-10 col-md-8 col-lg-8" role="search">
                         <label for="" class="col-12 form-label">Buscar:
                             <input @input="filtro" v-model="valorBusqueda" id="searchBar" class="col-lg-8 form-control"
-                                placeholder="Search" aria-label="Search">
+                                placeholder="Escriba aqui" aria-label="Search">
                         </label>
                     </div>
 
                     <!-- SELECTORES -->
-                    <div class="d-flex flex-column col-md-8">
-                        <div class="mb-3">
-                            <label for="" class="form-label">Catergorias</label>
-                            <select v-model="modelCategoria" @change="filtro" class="form-select form-select-lg" name=""
+                    <div class="d-flex col-12 col-sm-10 col-md-8 col-lg-8">
+                        <div class="mb-3 w-100">
+                            <label for="" class="form-label">Mascotas:</label>
+                            <select v-model="modelMascotas" @change="filtro" class="form-select form-select-lg" name=""
                                 id="">
-                                <option value="todas">Todas</option>
-                                <option value="farmacia">Farmacia</option>
-                                <option value="jugueteria">Jugueteria</option>
+                                
+                                <option value="productos">Todas</option>
+                                <option value="perros">Perros</option>
+                                <option value="gatos">Gatos</option>
                             </select>
-                        </div>
-                        <div @change="filtro" id="checkboxGroup"
-                            class="btn-group d-flex flex-wrap justify-content-evenly gap-3" role="group"
-                            aria-label="Basic checkbox toggle button group">
-
-                            <input v-model="modelPrecio" type="checkbox" class="btn-check" id="btn-hastaMil"
-                                value="hastaMil">
-                            <label class="checkboxProp btn btn-outline-success rounded-2" for="btn-hastaMil">Hasta
-                                $1000</label>
-                            <input v-model="modelPrecio" type="checkbox" class="btn-check" id="btn-milADosmil"
-                                value="milADosmil">
-                            <label class="checkboxProp btn btn-outline-success rounded-2" for="btn-milADosmil">De $1000 a
-                                $2000</label>
-                            <input v-model="modelPrecio" type="checkbox" class="btn-check" id="btn-masDeDosmil"
-                                value="masDeDosmil">
-                            <label class="checkboxProp btn btn-outline-success rounded-2" for="btn-masDeDosmil">Mas de
-                                $2000</label>
-                        </div>
+                        </div>             
                     </div>
+
+                    <div class="d-flex col-12 col-sm-10 col-md-8 col-lg-8">
+                        <div class="mb-3 w-100">
+                            <label for="" class="form-label">Precio:</label>
+                            <select v-model="modelPrecios" @change="filtro" class="form-select form-select-lg" name=""
+                                id="">
+                                <option value="vacio">Elija un rango</option>
+                                <option value="hasta1000">Hasta $1000</option>
+                                <option value="de1000a2000">De $1000 a $2000</option>
+                                <option value="mas2000">Mas de $2000</option>
+                            </select>
+                        </div>             
+                    </div>
+
                 </div>
                 <!--CARTAS-->
                 <div class="container w-100">
                     <div class="d-flex justify-content-center w-100">
-                        <div class="row w-100">
+                        <div class="row w-100 gap-1 gap-md-0 ">
+                            <template v-if="datos.length===0">
+                                <h2 class="text-center">No existen resultados para su busqueda</h2>
+                            </template>
                             <template v-for="producto of datos">
                                 <div
                                     class="col-lg-4 col-md-6 m-0 bg-white border rounded d-flex flex-column justify-content-center align-items-center">
@@ -185,21 +175,23 @@
                                             <h5>{{producto.producto}}</h5>
 
                                             <div class="d-flex flex-row align-items-center">
-                                                <h4 class="mr-1">${{producto.precio}}</h4><span
-                                                    class="strike-text"></span>
+                                                <h4 class="mr-1">${{producto.precio}}</h4>
+                                                    
                                             </div>
+                                            <h6>Disponibles: {{producto.disponibles}}</h6>
+
                                             <div v-if='producto.disponibles===0'>
-                                                <h6 class="text-danger">Sin Stock!</h6>
+                                                <h5 class="text-danger mb-lg-0">Sin Stock!</h5>
                                             </div>
                                             <div v-if="producto.disponibles<=5&&producto.disponibles!==0">
-                                                <h6 class="text-danger">Ultimas unidades!</h6>
+                                                <h5 class="text-danger mb-lg-0">Ultimas unidades!</h5>
                                             </div>
                                         </div>
 
                                         <div class=" d-flex flex-column flex-md-row gap-2 mt-4 pb-2">
                                             
                                             <button @click="agregarAlCarrito(producto)"
-                                                :class="producto.disponibles!==0?'btn btn-outline-success btn-sm':'btn btn-outline-secundary disabled btn-sm'"
+                                                :class="producto.disponibles!==0?'btn btn-success btn-sm':'btn strike-text btn-outline-dark disabled btn-sm'"
                                                 type="button">Agregar al carrito</button>
                                         </div>
 
