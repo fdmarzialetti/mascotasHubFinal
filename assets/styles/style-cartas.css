@@ -1,19 +1,83 @@
-.cartas-color-fondo{
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+.cartas-color-fondo {
     background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)), url(../images/diseno-patron-pow-colorido-lindo-gatito_1017-14710.png);
 }
-.ratings i{font-size: 16px;color: red}
-.strike-text{color: red;text-decoration: line-through}
-.product-image{width: 100%}
-.dot{height: 7px;width: 7px;margin-left: 6px;margin-right: 6px;margin-top: 3px;background-color: blue;border-radius: 50%;display: inline-block}
-.spec-1{color: #938787;font-size: 15px}h5{font-weight: 400}
-.para{font-size: 16px}
+
+.ratings i {
+    font-size: 16px;
+    color: red
+}
+
+.strike-text {
+    color: red;
+    text-decoration: line-through
+}
+
+.product-image {
+    width: 100%
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 3px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block
+}
+
+.spec-1 {
+    color: #938787;
+    font-size: 15px
+}
+
+h5 {
+    font-weight: 400
+}
+
+.para {
+    font-size: 16px
+}
+
+.modal-header {
+    background-color: orange;
+}
+
+.modal-footer {
+    background-color: orange;
+}
+
+.modal-body {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)), url(../images/diseno-patron-pow-colorido-lindo-gatito_1017-14710.png);
+}
+
+.text-center {
+    background-color: rgba(255, 255, 255, 0.475);
+    font-family: 'Amaranth', sans-serif;
+    font-size: 1.4rem;
+}
+
+.modal-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2rem;
+
+}
+
+/* font-family: 'Shadows Into Light', cursive; */
+
 @media (min-width:1024px) {
-    .carta-img-size{
+    .carta-img-size {
         height: 10em;
         max-height: 10em;
         object-fit: cover;
     }
-    .carta-size{
+
+    .carta-size {
         height: 13em;
     }
 }
