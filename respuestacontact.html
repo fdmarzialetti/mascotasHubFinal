@@ -1,51 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/styles/footer-style.css">
-    <link rel="stylesheet" href="./assets/styles/NAV-BAR.css">
-    <link rel="shortcut icon" href="./assets/images/pet-paw.png" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/styles/stylecontact.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>+Cotas | Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/styles/styleJuan.css">
+  <link rel="stylesheet" href="./assets/styles/footer-style.css">
+  <link rel="stylesheet" href="./assets/styles/NAV-BAR.css">
+  <link rel="shortcut icon" href="./assets/images/pet-paw.png" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--VUE-->
+  <link rel="stylesheet" href="./assets/styles/stylecontact.css">
+
 </head>
-<body class="respuesta__body">
-    <header class="headerNavBar">
-        <section class="section-navBar">
-          <div class="nav">
-            <img src="./assets/images/mascotas.png"  alt="">
-            <nav class="navbar navbar-light padre-buscadorNav">
-              <div class="container-fluid">
-                <form class="d-flex">
-                  <input class="form-control navBarForm-control me-2" type="search" placeholder="Search" aria-label="Search">
-                </form>
-              </div>
+<body id="app"class="respuesta__body">
+  <header>
+    <div class="fixed">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.4mdGP8tXnP88mI8yIY1fnQHaHa&pid=Api&P=0" alt="">
+    </div>
+    <section class="section-navBar2">
+        <div class="nav2">
+            <img src="https://media.discordapp.net/attachments/1049367005242867833/1065269394416078868/mascotasSinFondo.png?width=644&height=362"
+                alt="">
+            <nav class="navbar navBar2 navbar-expand-lg navbar-light">
+                <div class="container-fluid container-fluid-2 navBarcontainer-fluid-2/2">
+                    <button class="navbar-toggler boton-nav-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse collapse-navbar2" id="navbarNavAltMarkup">
+                        <div class="navbar-nav contenedor-de-ancors-nav2">
+                            <a class="nav-bar-a-nav2 navBarHome" aria-current="page" href="#">Inicio</a>
+                            <a class="nav-bar-a-nav3" href="./productos.html">Nuestros Productos</a>
+                            <a class="nav-bar-a-nav4" href="./farmacia.html">Farmacia</a>
+                            <a class="nav-bar-a-nav5" href="./jugueteria.html" tabindex="-1"
+                                aria-disabled="true">Jugueteria</a>
+                            <a class="nav-bar-a-nav6 navBarNuestrosProductos" href="./contacto.html">Contacto</a>
+                        </div>
+                        <div class="nav-bar-items-nav2">
+                            <a href="" data-bs-toggle="modal" data-bs-target="#myModal">
+                                <i class="fa-solid fa-cart-shopping">
+                                    <span v-if="cantidadEnCarrito>0"
+                                        class="badge rounded-pill bg-danger">{{cantidadEnCarrito}}</span>
+                                </i>
+                            </a>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#usuario"><i class="fa-solid fa-user"></i></a>
+                            <a href=""><i class="fa-solid fa-star"></i></a>
+                        </div>
+                    </div>
+                </div>
             </nav>
-            <div class="nav-bar-items">
-              <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-              <a href=""><i class="fa-solid fa-user"></i></a>
-              <a href=""><i class="fa-solid fa-star"></i></a>
-            </div>
-          </div>
-        </section>
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="container-fluid container-fluid-2 navBarcontainer-fluid-2">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <a class="nav-bar-a navBarHome" aria-current="page" href="./index.html">inicio</a>
-                <a class="nav-bar-a navBarNuestrosProductos" href="./productos.html">nuestros productos</a>
-                <a class="nav-bar-a" href="./farmacia.html">farmacia</a>
-                <a class="nav-bar-a" href="./jugueteria.html" tabindex="-1" aria-disabled="true">jugueteria</a>
-                <a class="nav-bar-a" href="./contacto.html">contacto</a>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
+
+        </div>
+    </section>
+</header>
+
+<!-- MODAL --->
+<div class="modal" id="usuario">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Ingrese</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="modal-form-usuario">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Ingrese su mail</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" required>
+                    <div id="emailHelp" class="form-text">Nunca compartiremos sus datos.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Acepto todas las
+                        condiciones</label>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-secondary">Submit</button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal" id="myModal">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header ">
+            <h4 class="modal-title   rounded-2">Carrito de compras</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <template v-for="producto of carrito">
+                <div
+                    class="modalCard p-3 mb-2 gap-2 d-flex flex-column flex-sm-row justify-content-between align-items-center w-100 h-100 rounded-2">
+                    <img class="rounded-4" :src="producto.imagen" style="width: 10em; height: 10em;">
+                    <div
+                        class="cardBody d-flex flex-column justify-content-between align-items-center w-50">
+                        <h5 class="text-center fw-bold">{{producto.producto}}</h5>
+                        <div
+                            class="d-flex flex-sm-column gap-2 justify-content-evenly align-items-center h-100 w-100">
+                            <p class="m-0 fw-bold">Valor por unidad: ${{producto.precio}}</p>
+                            <p class="m-0 fw-bold">Total: ${{producto.precio * producto.cantidad}}</p>
+                            <div class="d-flex gap-2 align-items-center">
+                                <p class="m-0 fw-bold">Cantidad:</p>
+                                <button @click="agregarAlCarrito(producto)" type="button"
+                                    class="btn  btn-sm btn-secondary">
+                                    +
+                                </button>
+                                <span>{{producto.cantidad}}</span>
+                                <button @click="quitarDelCarrito(producto)" type="button"
+                                    class="btn  btn-sm btn-secondary">
+                                    -
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+        <div class="modal-footer d-flex justify-content-between">
+            <h3 class="fw-bolder">Total a pagar: ${{totalPrecio}}</h3 class=>
+            <button type="button" @click="vaciarCarrito" class="btn btn-success" data-bs-dismiss="modal">Finalizar Compra</button>
+        </div>
+    </div>
+</div>
+</div>
+
 <div class="respuesta__titulo">
     <h1 class="contact__h1">Centro de Atencion al Cliente</h1>
 </div>
@@ -70,7 +164,7 @@
     <a href="">falta un articulo de mi pedido<span class="respuesta__span">=></span></a>
     <a href="">Compre un producto pero ahora tiene otro precio en la web<span class="respuesta__span">=></span></a>
     <a href="">Partes faltantes de un producto<span class="respuesta__span">=></span></a>
-    <a  class="contact__button__contact" href=""><ul ><li class="contact__li"><span class="contact__button__agent">Contacta con un agente</span></li></ul></a> 
+    <a  class="contact__button__contact" href="./form.html"><ul ><li class="contact__li"><span class="contact__button__agent">Contacta con un agente</span></li></ul></a> 
 </aside>
 <div>
     <h2 class="respuesta__subtitulo">Mi pedido aun no ha sido entregado</h2>
@@ -115,6 +209,11 @@
         </p>
     </div>
 </main>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/4ffb8edd00.js" crossorigin="anonymous"></script>
+<script src="./assets/scripts/main.js"></script>
+</body>
 </body>
 </html>

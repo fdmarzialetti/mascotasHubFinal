@@ -296,6 +296,59 @@
     }
 
 }
+.redirection__main__contact{
+    margin: 1rem 1rem 1rem 15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.redirection__text{
+    font-size: .8rem;
+    color: red;
+}
+.redirection__h1{
+    color: #ffa600;
+}
+.redirection__h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.redirection__input{
+    
+    height: 15rem;
+    width: 50rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+.redirection__input__text{
+    width: 18rem;
+    border-radius: 5px;
+}
+.redirection__terms{
+    display: flex;
+    justify-content: space-between;
+     margin-right: 18.2rem; 
+    
+}
+.redirection__terms__top{
+display: flex;
+gap: 1rem;
+justify-content: center;
+align-items: center;
+}
+.redirection__main__contact form{
+ display: flex;
+ flex-direction: column;
+ gap: 1rem;
+}
+.redirection__send{
+    background-color: crimson;
+    color: white;
+    padding: .8rem 5rem;
+    cursor: pointer;
+    border-radius: 5rem;
+    border: none;
+}
+
 @media only screen and (min-width: 300px) and (max-width:675px){
 .contact_-section{
     display: none;
