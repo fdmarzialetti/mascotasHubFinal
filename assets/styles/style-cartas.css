@@ -1,4 +1,6 @@
-
+.cartas-color-fondo{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)), url(../images/diseno-patron-pow-colorido-lindo-gatito_1017-14710.png);
+}
 .ratings i{font-size: 16px;color: red}
 .strike-text{color: red;text-decoration: line-through}
 .product-image{width: 100%}
