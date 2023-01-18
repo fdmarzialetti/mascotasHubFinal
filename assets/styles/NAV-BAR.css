@@ -382,3 +382,8 @@
 .navBarForm-control{
     width: 300px !important;
 }
+header{
+    background-color: white;
+    position: sticky !important;
+    top: 0px;
+}

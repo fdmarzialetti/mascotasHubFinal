@@ -36,7 +36,11 @@
                       <a class="nav-bar-a-nav6 navBarNuestrosProductos" href="./contacto.html">contacto</a>
                     </div>
                     <div class="nav-bar-items-nav2">
-                        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="" data-bs-toggle="modal" data-bs-target="#myModal">
+                            <i class="fa-solid fa-cart-shopping">
+                                <span v-if="cantidadEnCarrito>0" class="badge rounded-pill bg-danger">{{cantidadEnCarrito}}</span>
+                            </i>
+                        </a>
                         <a href=""><i class="fa-solid fa-user"></i></a>
                         <a href=""><i class="fa-solid fa-star"></i></a>
                       </div>
