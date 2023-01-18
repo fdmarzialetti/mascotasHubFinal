@@ -8,6 +8,10 @@
 }
 
 
+.home-main {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)), url(../images/diseno-patron-pow-colorido-lindo-gatito_1017-14710.png);
+
+}
 
 .home-box-title {
     background-image: url(../images/front-view-of-beautiful-dog-with-copy-space.jpg);
@@ -56,6 +60,7 @@
 }
 
 .home-textOurs {
+    background-color: rgba(255, 255, 255, 0.412);
     width: 40vw;
     display: flex;
     flex-direction: column;
@@ -68,6 +73,12 @@
     font-family: 'Shadows Into Light', cursive;
     font-weight: bolder;
     font-size: 3rem;
+}
+
+.home-textOurs p {
+    font-family: 'Amaranth', sans-serif;
+    font-size: 1.3rem;
+
 }
 
 .home-img-history {
@@ -196,10 +207,12 @@
     text-shadow: 5px 5px 5px black;
 }
 
+
 .home-farmacia h2 {
     background-color: rgba(255, 166, 0, 0.797);
     width: 100%;
     text-align: center;
+    font-size: 2rem;
 }
 
 
@@ -220,8 +233,21 @@
 }
 
 .home-box-caracteristicas {
+
     width: 20rem;
     text-align: center;
+}
+
+.home-box-caracteristicas h3 {
+    background-color: rgba(255, 255, 255, 0.668);
+    ;
+    font-size: 2.3rem;
+}
+
+.home-box-caracteristicas p {
+    background-color: rgba(255, 255, 255, 0.581);
+    font-size: 1.1rem;
+    font-weight: bolder;
 }
 
 .home-container-caracteristicas {
@@ -239,7 +265,6 @@
 
 
 .home-youtube-fondo h2 {
-    /* font-family: 'Amaranth', sans-serif; */
     font-family: 'Shadows Into Light', cursive;
     font-size: 4rem;
     font-weight: bolder;
