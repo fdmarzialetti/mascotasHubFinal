@@ -3,13 +3,17 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            palabrasPerros:["hueso","cachorros","perro","perros","pelota","cepillo"],
+            palabrasGatos:["gato","gatitos","rata","cepillo","gatos"],
             productos: [],
             carrito: [],
             datos: [],
             valorBusqueda:"",
-            modelCategoria:"todas",
-            modelPrecio:[],
-            loadData: true
+            modelMascotas:"productos",
+            cantidadEnCarrito:0,
+            modelPrecios:"vacio",
+            loadData: false,
+            totalPrecio:0
         }
     },
     created() {
@@ -26,11 +30,19 @@ createApp({
         } else {
             localStorage.setItem("carrito", JSON.stringify(this.carrito))
         }
-
+        
+    },
+    beforeMount(){
+        this.calcularCantidad()
     },
     methods: {
-        probar:function(){
-            console.log(this)
+        calcularCantidad:function(){
+            let carritoLocal = JSON.parse(localStorage.getItem("carrito"))
+            let total=0
+            carritoLocal.forEach(p=>{
+                total+=p.cantidad
+            })
+            this.cantidadEnCarrito=total
         },
         cargaPorPagina: function () {
             let cargaProductos = JSON.parse(localStorage.getItem("carrito"))
@@ -65,6 +77,53 @@ createApp({
         },
         filtro: function () {
             let filtroPorBusqueda = this.productos.filter(p => p.producto.toLowerCase().includes(this.valorBusqueda.toLowerCase()))
+            if(document.title.toLowerCase().includes("farmacia")){
+                filtroPorBusqueda=filtroPorBusqueda.filter(p=>p.categoria==="farmacia")
+            }
+            if(document.title.toLowerCase().includes("jugueteria")){
+                filtroPorBusqueda=filtroPorBusqueda.filter(p=>p.categoria==="jugueteria")
+            }
+            if(this.modelMascotas==="perros"){
+                let filtroPorMascotas=[]
+                filtroPorBusqueda.forEach(prod=>{
+                    let encontro=false
+                    prod.producto.split(' ').forEach(palabra=>{
+                        if(this.palabrasPerros.includes(palabra.toLowerCase())){
+                            encontro=true
+                        }
+                    })
+                    if(encontro){
+                        filtroPorMascotas.push(prod)
+                    }
+                    
+                })
+                filtroPorBusqueda=filtroPorMascotas
+            }
+            if(this.modelMascotas==="gatos"){
+                let filtroPorMascotas=[]
+                filtroPorBusqueda.forEach(prod=>{
+                    let encontro=false
+                    prod.producto.split(' ').forEach(palabra=>{
+                        if(this.palabrasGatos.includes(palabra.toLowerCase())){
+                            encontro=true
+                        }
+                    })
+                    if(encontro){
+                        filtroPorMascotas.push(prod)
+                    }
+                })
+                filtroPorBusqueda=filtroPorMascotas
+            }
+            if(this.modelPrecios==="hasta1000"){
+                filtroPorBusqueda=filtroPorBusqueda.filter(p=>p.precio<=1000)
+                console.log(filtroPorBusqueda)
+            }
+            if(this.modelPrecios==="de1000a2000"){
+                filtroPorBusqueda=filtroPorBusqueda.filter(p=>(p.precio>=1000&&p.precio<=2000))
+            }
+            if(this.modelPrecios==="mas2000"){
+                filtroPorBusqueda=filtroPorBusqueda.filter(p=>p.precio>=2000)
+            }
             this.datos=filtroPorBusqueda
         },
         quitarDelCarrito: function (producto) {
@@ -79,6 +138,7 @@ createApp({
                 }
                 localStorage.setItem("carrito", JSON.stringify(this.carrito))
             }
+            this.calcularCantidad()
         },
         agregarAlCarrito: function (producto) {
             if (producto.disponibles > 0) {
@@ -90,6 +150,7 @@ createApp({
             }
             localStorage.setItem("carrito", JSON.stringify(this.carrito))
             datosLocales = JSON.parse(localStorage.getItem("carrito"))
+            this.calcularCantidad()
         }
     }
 }).mount('#app')

@@ -18,8 +18,9 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--VUE-->
 </head>
 
-<body class="d-flex flex-column">
-    <header>
+
+<body id="app" class="body-color d-flex flex-column">
+   <header>
         <section class="section-navBar2">
             <div class="nav2">
               <img src="./assets/images/mascotas.png"  alt="">
@@ -42,40 +43,29 @@
                         <a href=""><i class="fa-solid fa-star"></i></a>
                       </div>
                   </div>
-                </div>
-              </nav>
-              
-            </div>
           </section>
+
+            </nav>
+            </div>
+        </section>
+      
+
+        </div>
+        </nav>
+
     </header>
 
-    <main style="min-height: 50em;" class="d-flex flex-column gap-5">
+    <main style="min-height: 50em;" class="d-flex flex-column">
         <div class="home-box-title">
             <section class="d-flex justify-content-start home-box-section-title">
 
-                <div class="d-flex flex-column align-items-center gap-3">
-                    <h1 class="home-title">Bienvenidos a +COTAS</h1>
-                    <h3 class="home-slogan">El petshop donde encontras todo para tu mascota</h3>
-
+                <div class="d-flex flex-column align-items-center">
+                    <h1 class="home-title ps-sm-5">Nuestros Productos</h1>
                 </div>
             </section>
         </div>
 
-            <!------------------------------SECCION CARTAS------------------------------------------->
-
-    <div id="app" class="d-flex flex-column gap-1 align-items-center">
-        
-        <!-- MODAL BUTTON -->
-        <div id="btn-back-to-top" class="d-flex flex-column align-items-center">
-            <button type="button"
-                :class="carrito.length===0?'btn disabled btn-lg btn-secondary bg-gradient':'btn btn-lg  btn-success bg-gradient'"
-                data-bs-toggle="modal" data-bs-target="#myModal">
-                <div class="d-flex flex-column">
-                    <span :class="carrito.length===0?'fw-bolder fs-6':'fw-bolder text-white fs-6'"></span>
-                    <i class="fa-solid fa-cart-shopping"><span>{{}}</span></i>
-                </div>
-            </button>
-        </div>
+        <!------------------------------SECCION CARTAS------------------------------------------->
 
         <!-- MODAL -->
         <div class="modal" id="myModal">
@@ -119,123 +109,104 @@
                 </div>
             </div>
         </div>
-        <!--BARRA DE BUSQUEDA-->
-        <div class="d-flex col-12 col-md-10 col-lg-2" role="search">
-            <input @input="filtro" v-model="valorBusqueda" id="searchBar" class="form-control me-2"
-                placeholder="Search" aria-label="Search">
-        </div>
-        <!-- SELECTORES -->
-        <div class="w-50 d-flex flex-column">
-            <div class="mb-3">
-                <label for="" class="form-label">Catergorias</label>
-                <select v-model="modelCategoria" @change="filtro" class="form-select form-select-lg" name="" id="">
-                    <option value="todas">Todas</option>
-                    <option value="farmacia">Farmacia</option>
-                    <option value="jugueteria">Jugueteria</option>
-                </select>
-            </div>
-            <div @change="filtro" id="checkboxGroup" class="btn-group d-flex flex-wrap justify-content-evenly"
-                    role="group" aria-label="Basic checkbox toggle button group">
+        <div class="cartas-color-fondo d-flex flex-column align-items-center col pt-5">
 
-                        <input v-model="modelPrecio" type="checkbox" class="btn-check" id="btn-hastaMil" value="hastaMil">
-                        <label class="checkboxProp btn btn-outline-danger rounded-2"
-                            for="btn-hastaMil">Hasta $1000</label>
-                            <input v-model="modelPrecio" type="checkbox" class="btn-check" id="btn-milADosmil" value="milADosmil">
-                        <label class="checkboxProp btn btn-outline-danger rounded-2"
-                            for="btn-milADosmil">De $1000 a $2000</label>
-                            <input v-model="modelPrecio" type="checkbox" class="btn-check" id="btn-masDeDosmil" value="masDeDosmil">
-                        <label class="checkboxProp btn btn-outline-danger rounded-2"
-                            for="btn-masDeDosmil">Mas de $2000</label>
+            <div class="CONTENEDOR-CARTAS d-flex flex-column flex-lg-row gap-2 justify-content-evenly col-10 col-lg-12">
+                <div class="FILTROS d-flex flex-column align-items-center col col-lg-3">
+                    <!--BARRA DE BUSQUEDA-->
+                    
+                    <div class="d-flex col-12 col-sm-10 col-md-8 col-lg-8" role="search">
+                        <label for="" class="col-12 form-label bold">Buscar:
+                            <input @input="filtro" v-model="valorBusqueda" id="searchBar" class="col-lg-8 form-control"
+                                placeholder="Escriba aqui" aria-label="Search">
+                        </label>
+                    </div>
 
-            </div>
-            <div class="w-100 d-flex flex-column">
-                <label for="" class="form-label">Precios:</label>
-                <div  @change="probar" class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                    <input v-model="modalPrecio" type="radio" class="btn-check" name="btnradio"
-                        id="btncheck1" autocomplete="off">
-                    <label class="btn btn-outline-success" value="1000" for="btncheck1">Hasta $1000</label>
+                    <!-- SELECTORES -->
+                    <div class="d-flex col-12 col-sm-10 col-md-8 col-lg-8">
+                        <div class="mb-3 w-100">
+                            <label for="" class="form-label">Mascotas:</label>
+                            <select v-model="modelMascotas" @change="filtro" class="form-select form-select-lg" name=""
+                                id="">
+                                
+                                <option value="productos">Todas</option>
+                                <option value="perros">Perros</option>
+                                <option value="gatos">Gatos</option>
+                            </select>
+                        </div>             
+                    </div>
 
-                    <input v-model="modalPrecio" type="radio" class="btn-check" name="btnradio"
-                        id="btncheck2" autocomplete="off">
-                    <label class="btn btn-outline-success" for="btncheck2">De $1000 a $2000</label>
+                    <div class="d-flex col-12 col-sm-10 col-md-8 col-lg-8">
+                        <div class="mb-3 w-100">
+                            <label for="" class="form-label">Precio:</label>
+                            <select v-model="modelPrecios" @change="filtro" class="form-select form-select-lg" name=""
+                                id="">
+                                <option value="vacio">Elija un rango</option>
+                                <option value="hasta1000">Hasta $1000</option>
+                                <option value="de1000a2000">De $1000 a $2000</option>
+                                <option value="mas2000">Mas de $2000</option>
+                            </select>
+                        </div>             
+                    </div>
 
-                    <input  v-model="modalPrecio" type="radio" class="btn-check" name="btnradio"
-                        id="btncheck3" autocomplete="off">
-                    <label class="btn btn-outline-success" for="btncheck3">Mas de $2000</label>
                 </div>
-            </div>
-            <div class="w-100 d-flex flex-column">
-                <label for="" class="form-label">Mascota:</label>
-                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                    <input  type="radio" class="btn-check" name="btnradio2"
-                        id="btnTodas" autocomplete="off">
-                    <label class="btn btn-outline-success" for="btnTodas">Todas</label>
+                <!--CARTAS-->
+                <div class="container w-100">
+                    <div class="d-flex justify-content-center w-100">
+                        <div class="row w-100 gap-1 gap-md-0 ">
+                            <template v-if="datos.length===0">
+                                <h2 class="text-center">No existen resultados para su busqueda</h2>
+                            </template>
+                            <template v-for="producto of datos">
+                                <div
+                                    class="col-lg-4 col-md-6 m-0 bg-white border rounded d-flex flex-column justify-content-center align-items-center">
+                                    <div class="col-lg-10 mt-1">
+                                        <img class="carta-img-size  img-responsive rounded product-image"
+                                            :src=producto.imagen>
+                                    </div>
+                                    <div
+                                        class="carta-size col-md-10 col-lg-12 mt-1 d-flex flex-column justify-content-between align-items-center">
+                                        <div class="carta-texto">
+                                            <h5>{{producto.producto}}</h5>
 
-                    <input  type="radio" class="btn-check" name="btnradio2"
-                        id="btnPerro" autocomplete="off">
-                    <label class="btn btn-outline-success" for="btnPerro">Perro</label>
+                                            <div class="d-flex flex-row align-items-center">
+                                                <h4 class="mr-1">${{producto.precio}}</h4>
+                                                    
+                                            </div>
+                                            <h6>Disponibles: {{producto.disponibles}}</h6>
 
-                    <input  type="radio" class="btn-check" name="btnradio2"
-                        id="btnGato" autocomplete="off">
-                    <label class="btn btn-outline-success" for="btnGato">Gato</label>
-                </div>
-            </div>
-        </div>
-        <!--CARTAS-->
-        <div class="container mt-5 mb-5">
-            <div class="d-flex justify-content-center row">
-                <div class="col-md-10">
-                    <template v-for="producto of datos">
-                        <div class="row p-2 bg-white border rounded mt-2">
-                            <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image"
-                                    :src=producto.imagen></div>
-                            <div class="col-md-6 mt-1">
-                                <h5>{{producto.producto}}</h5>
-                                <div class="d-flex flex-row">
-                                    <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                            class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                                    <span>Cantidad en carrito: {{producto.cantidad}}</span>
+                                            <div v-if='producto.disponibles===0'>
+                                                <h5 class="text-danger mb-lg-0">Sin Stock!</h5>
+                                            </div>
+                                            <div v-if="producto.disponibles<=5&&producto.disponibles!==0">
+                                                <h5 class="text-danger mb-lg-0">Ultimas unidades!</h5>
+                                            </div>
+                                        </div>
 
+                                        <div class=" d-flex flex-column flex-md-row gap-2 mt-4 pb-2">
+                                            
+                                            <button @click="agregarAlCarrito(producto)"
+                                                :class="producto.disponibles!==0?'btn btn-success btn-sm':'btn strike-text btn-outline-dark disabled btn-sm'"
+                                                type="button">Agregar al carrito</button>
+                                        </div>
+
+                                    </div>
+                                    <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+
+                                    </div>
                                 </div>
-                                <span>Disponibles: {{producto.disponibles}}</span>
-                                <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span
-                                        class="dot"></span><span>Light
-                                        weight</span><span class="dot"></span><span>Best finish<br></span></div>
-                                <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span
-                                        class="dot"></span><span>For
-                                        men</span><span class="dot"></span><span>Casual<br></span></div>
-                                <p class="text-justify text-truncate para mb-0">There are many variations of passages of
-                                    Lorem Ipsum available, but the majority have suffered alteration in some form, by
-                                    injected humour, or randomised words which don't look even slightly
-                                    believable.<br><br>
-                                </p>
-                            </div>
-                            <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-                                <div class="d-flex flex-row align-items-center">
-                                    <h4 class="mr-1">${{producto.precio}}</h4><span class="strike-text"></span>
-                                </div>
-                                <h6 class="text-success">Free shipping</h6>
-                                <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm"
-                                        type="button">Details</button>
-                                    <button @click="agregarAlCarrito(producto)"
-                                        class="btn btn-outline-primary btn-sm mt-2" type="button">Add to
-                                        wishlist</button>
-                                </div>
-                                <button @click="quitarDelCarrito(producto)" class="btn btn-outline-danger btn-sm mt-2"
-                                    type="button">Remove</button>
-                            </div>
+                            </template>
                         </div>
-                    </template>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-----------------------------------FIN SECCION CARTAS--------------------------------------->
+        <!-----------------------------------FIN SECCION CARTAS--------------------------------------->
     </main>
 
 
-    <footer class="pie-pagina">
+    <footer class="pie-pagina mt-5">
         <div class="grupo-1">
             <div class="box direction">
                 <iframe class="marco"
@@ -272,7 +243,7 @@
                 <div class="footer-container">
                     <h5>CUENTA</h5>
                     <a href="#carroDeCompras">Mi Cuenta</a>
-                    <a href="#carroDeCompras">Mis Compras</a>
+                    <a href="#carroDeCompras" data-bs-toggle="modal" data-bs-target="#myModal">Mis Compras</a>
                     <a href="#carroDeCompras">Carrito</a>
                     <a href="#inicio">Tienda</a>
                 </div>
@@ -312,7 +283,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-        <script src="./assets/scripts/main.js"></script>
+    <script src="./assets/scripts/main.js"></script>
 </body>
 
 </html>
