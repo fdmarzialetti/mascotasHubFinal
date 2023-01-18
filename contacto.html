@@ -57,6 +57,37 @@
 
         </div>
     </section>
+<!-- =======
+<body>
+  <header>
+    <section class="section-navBar2">
+        <div class="nav2">
+          <img src="./assets/images/mascotas.png"  alt="">
+          <nav class="navbar navBar2 navbar-expand-lg navbar-light">
+            <div class="container-fluid container-fluid-2 navBarcontainer-fluid-2/2">
+              <button class="navbar-toggler boton-nav-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse collapse-navbar2" id="navbarNavAltMarkup">
+                <div class="navbar-nav contenedor-de-ancors-nav2">
+                  <a class="nav-bar-a-nav2 navBarHome" aria-current="page" href="./index.html">inicio</a>
+                  <a class="nav-bar-a-nav3" href="./productos.html">nuestros productos</a>
+                  <a class="nav-bar-a-nav4" href="./farmacia.html">farmacia</a>
+                  <a class="nav-bar-a-nav5" href="./jugueteria.html" tabindex="-1" aria-disabled="true">jugueteria</a>
+                  <a class="nav-bar-a-nav6 navBarNuestrosProductos" href="#">contacto</a>
+                </div>
+                <div class="nav-bar-items-nav2">
+                    <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href=""><i class="fa-solid fa-user"></i></a>
+                    <a href=""><i class="fa-solid fa-star"></i></a>
+                  </div>
+              </div>
+            </div>
+          </nav>
+          
+        </div>
+      </section>
+>>>>>>> 1f47b233e0a8e5c01b6042404015ccd8cbe9eb45 -->
 </header>
     <div class="titulo__contact">
     <h1 class="contact__supertitulo">Centro de Soporte</h1>
@@ -185,7 +216,116 @@
       </form>
     </div>
     </main>
-    <footer><h1 class="contact__h1">Esperando por Jara...</h1></footer>
+
+    <!-- MODAL -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header ">
+                  <h4 class="modal-title bg-success bg-gradient rounded-2">Carrito</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                  <template v-for="producto of carrito">
+                      <div
+                          class="modalCard p-3 mb-2 gap-2 d-flex flex-column flex-sm-row justify-content-between align-items-center w-100 h-100 rounded-2">
+                          <img class="rounded-4" :src="producto.imagen" style="width: 10em; height: 10em;">
+                          <div class="cardBody d-flex flex-column justify-content-between align-items-center w-50">
+                              <h5 class="text-center fw-bold">{{producto.producto}}</h5>
+                              <div
+                                  class="d-flex flex-sm-column gap-2 justify-content-evenly align-items-center h-100 w-100">
+                                  <p class="m-0 fw-bold">Price: ${{producto.precio * producto.cantidad}}</p>
+                                  <div class="d-flex gap-2 align-items-center">
+                                      <button @click="agregarAlCarrito(producto)" type="button"
+                                          class="btn  btn-sm btn-secondary">
+                                          +
+                                      </button>
+                                      <span>{{producto.cantidad}}</span>
+                                      <button @click="quitarDelCarrito(producto)" type="button"
+                                          class="btn  btn-sm btn-secondary">
+                                          -
+                                      </button>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                  </template>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <footer class="pie-pagina">
+    <div class="grupo-1">
+        <div class="box direction">
+            <iframe class="marco"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d821.0607710453776!2d-58.40174257082008!3d-34.598014194840154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca9158e82c41%3A0xafb5fe117a2c5a52!2sParaguay%202334%2C%20C1121ABL%20CABA!5e0!3m2!1ses-419!2sar!4v1673792818924!5m2!1ses-419!2sar"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>Dirección: Paraguay 2334 5 F - CABA</p>
+
+        </div>
+        <div class="box">
+            <h2>SOBRE NOSOTROS</h2>
+            <p>Equipo conformado por:</p>
+            <a href="https://github.com/fdmarzialetti" target="_blank"> Fernando Marzialetti </a>
+            <a href="https://github.com/juancalvo864" target="_blank"> Juan Calvo </a>
+            <a href="https://github.com/emiliano45214" target="_blank"> Emiliano Brizio </a>
+            <a href="https://github.com/OscarGRubianoA" target="_blank">Oscar Rubiano</a>
+            <a href="https://github.com/Dferprojects" target="_blank">Leonardo Fernández Jara</a>
+        </div>
+        <div class="box">
+            <h2>SIGUENOS</h2>
+            <div class="red-social">
+                <a href="https://web.facebook.com/" target="_blank" class="fa fa-facebook" id="face"></a>
+                <a href="https://www.instagram.com/" target="_blank" class="fa fa-instagram" id="insta"></a>
+                <a href="https://web.whatsapp.com/" target="_blank" class="fa fa-whatsapp" id="wasap"></a>
+                <a href="https://www.youtube.com/" target="_blank" class="fa fa-youtube" id="youtube"></a>
+            </div>
+        </div>
+    </div>
+    <div class="grupo1-bis">
+        <figure class="footer-container">
+            <img class="perro" src="./assets/images/perropng.png" alt="perrobado">
+        </figure>
+
+        <div class="helpAcount">
+            <div class="footer-container">
+                <h5>CUENTA</h5>
+                <a href="#carroDeCompras">Mi Cuenta</a>
+                <a href="#carroDeCompras">Mis Compras</a>
+                <a href="#carroDeCompras">Carrito</a>
+                <a href="#inicio">Tienda</a>
+            </div>
+            <div class="footer-container">
+                <h5> AYUDA</h5>
+
+                <a href="./contacto.html">Preguntas Frecuentes</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Sobre nosotros</a>
+
+            </div>
+        </div>
+
+
+        <figure class="payment">
+            <h5>MÉTODOS DE PAGO</h5>
+            <img class="icons-card"
+                src="https://sucanuy.vtexassets.com/assets/vtex/assets-builder/sucanuy.sucanuy-store-theme/1.20.15/imgs/footer/logo-visa___bb0f278dad9375079961d92af68b9a73.svg"
+                alt="visa">
+            <img class="icons-card"
+                src="https://sucanuy.vtexassets.com/assets/vtex/assets-builder/sucanuy.sucanuy-store-theme/1.20.15/imgs/footer/logo-master___96c3af8ab683e39ea9460dea1b4ba532.svg">
+            <img class="icons-card" src="https://iconape.com/wp-content/png_logo_vector/mercadopago-logo.png"
+                alt="mercadopago">
+        </figure>
+
+    </div>
+    <div class="grupo-2">
+        <small>&copy; 2023 <b>+Cotas</b> - Todos los Derechos Reservados - Grupo 3 - Cohorte 41</small>
+    </div>
+</footer>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

@@ -382,6 +382,10 @@
     }
 }
 .navBarForm-control{
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1f47b233e0a8e5c01b6042404015ccd8cbe9eb45
     width: 300px !important;
 }
 .fixed{
@@ -420,4 +424,5 @@ header{
     background-position: center; 
     background-image:  linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
      url(https://media.discordapp.net/attachments/1049367005242867833/1065280879724871680/lasinhueso.png?width=487&height=325);
+
 }
