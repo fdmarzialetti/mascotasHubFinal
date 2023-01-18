@@ -24,7 +24,7 @@
     transition: all 1.5s;
     font-size: 25px;
     margin-left: 30px;
-    color:#16a95d ;
+    color:#a7a916 ;
 }
 .nav-bar-items a{
     margin-right: 20px;
@@ -57,7 +57,7 @@
         height: 45px;
     }
     .navbar-collapse a:hover{
-        background-color: rgba(255, 255, 255, 0.218);
+        background-color: rgba(255, 255, 255, 0);
     border-left: 1px solid rgb(255, 255, 255);
     border-right: 1px solid rgb(255, 255, 255);
     color: rgb(255, 255, 255) !important;
@@ -254,16 +254,18 @@
     background-color: none;
 }
 .nav-bar-items-nav2 a i{
+    background-color: rgb(255, 255, 255);
+    padding: 9px;
+    border-radius: 100px;
     transition: all 1.5s;
-    font-size: 22px;
+    font-size: 15px;
     margin-left: 30px;
-    color:rgba(0, 157, 147, 0.84);
+    color:rgb(54, 178, 33);
 }
 .nav-bar-items-nav2 a i:hover{
     transform: rotate(360deg);
     color: rgb(208, 0, 0);
     border: none;
-    bor
 }
 .nav-bar-items-nav2 a:hover{
     border: none;
@@ -277,7 +279,7 @@
     color: white !important;
 }
 .contenedor-de-ancors-nav2{
-    background-image: url(https://image.freepik.com/vector-gratis/fondo-patron-huesos-huellas_1374-18.jpg);
+    background-image: url(https://media.discordapp.net/attachments/1049367005242867833/1065261754294210641/accesorios-mascotas-concepto-naturaleza-muerta-objetos-coloridos_23-2148949578.png?width=644&height=429);
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -295,25 +297,25 @@
     border-bottom-left-radius: 10px;
 }
 .contenedor-de-ancors-nav2 .nav-bar-a-nav2{
- background-color: rgba(0, 0, 0, 0.388);
+ background-color: rgba(0, 0, 0, 0.792);
  border-top-left-radius: 10px;
  border-bottom-left-radius: 10px;
 } 
 .contenedor-de-ancors-nav2 .nav-bar-a-nav3{
-    background-color: rgba(0, 0, 0, 0.382);
+    background-color: rgba(0, 0, 0, 0.792);
 } 
 .contenedor-de-ancors-nav2 .nav-bar-a-nav4{
-    background-color: rgba(0, 0, 0, 0.395);
+    background-color: rgba(0, 0, 0, 0.792);
 } 
 .contenedor-de-ancors-nav2 .nav-bar-a-nav5{
-    background-color: rgba(0, 0, 0, 0.385);
+    background-color: rgba(0, 0, 0, 0.792);
 } 
 .contenedor-de-ancors-nav2 .nav-bar-a-nav6:hover{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 .contenedor-de-ancors-nav2 .nav-bar-a-nav6{
-    background-color: rgba(0, 0, 0, 0.375);
+    background-color: rgba(0, 0, 0, 0.792);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 } 
@@ -382,8 +384,40 @@
 .navBarForm-control{
     width: 300px !important;
 }
+.fixed{
+    position: fixed !important;
+    top: 80%;
+    left: 90%;
+    
+}
+.fixed img{
+    width: 100px;
+    border-radius: 90px;
+    border: 1px solid rgb(255, 157, 0);
+}
+@media (max-width: 1094px){
+    .fixed{
+        left: 85%;
+    }
+}
+@media (max-width: 698px){
+    .fixed{
+        left: 80%;
+    }
+}
+@media (max-width:562px){
+    .fixed{
+        left: 70%;
+    }
+}
+@media (max-width:400px){
+    .fixed{
+        left: 60%;
+    }
+}
 header{
-    background-color: white;
-    position: sticky !important;
-    top: 0px;
+     background-size: 2000px;
+    background-position: center; 
+    background-image:  linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+     url(https://media.discordapp.net/attachments/1049367005242867833/1065280879724871680/lasinhueso.png?width=487&height=325);
 }
