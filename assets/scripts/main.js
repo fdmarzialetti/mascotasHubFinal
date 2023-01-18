@@ -34,11 +34,18 @@ createApp({
         } else {
             localStorage.setItem("carrito", JSON.stringify(this.carrito))
         }    
+        this.calcularPrecioTotal()
     },
     beforeMount(){
         this.calcularCantidad()
     },
     methods: {
+        vaciarCarrito:function(){
+            localStorage.clear()
+            this.carrito=[]
+            this.calcularPrecioTotal()
+            this.cantidadEnCarrito=0
+        },
         calcularPrecioTotal:function(){
             let total=0
             this.carrito.forEach(p=>{

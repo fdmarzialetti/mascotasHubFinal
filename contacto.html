@@ -217,47 +217,85 @@
     </div>
     </main>
 
-    <!-- MODAL -->
-    <div class="modal" id="myModal">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header ">
-                  <h4 class="modal-title bg-success bg-gradient rounded-2">Carrito</h4>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-              </div>
-              <div class="modal-body">
-                  <template v-for="producto of carrito">
-                      <div
-                          class="modalCard p-3 mb-2 gap-2 d-flex flex-column flex-sm-row justify-content-between align-items-center w-100 h-100 rounded-2">
-                          <img class="rounded-4" :src="producto.imagen" style="width: 10em; height: 10em;">
-                          <div class="cardBody d-flex flex-column justify-content-between align-items-center w-50">
-                              <h5 class="text-center fw-bold">{{producto.producto}}</h5>
-                              <div
-                                  class="d-flex flex-sm-column gap-2 justify-content-evenly align-items-center h-100 w-100">
-                                  <p class="m-0 fw-bold">Price: ${{producto.precio * producto.cantidad}}</p>
-                                  <div class="d-flex gap-2 align-items-center">
-                                      <button @click="agregarAlCarrito(producto)" type="button"
-                                          class="btn  btn-sm btn-secondary">
-                                          +
-                                      </button>
-                                      <span>{{producto.cantidad}}</span>
-                                      <button @click="quitarDelCarrito(producto)" type="button"
-                                          class="btn  btn-sm btn-secondary">
-                                          -
-                                      </button>
-                                  </div>
+    
+  <!-- MODAL --->
+  <div class="modal" id="usuario">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ingrese</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form-usuario">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Ingrese su mail</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" required>
+                        <div id="emailHelp" class="form-text">Nunca compartiremos sus datos.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Acepto todas las
+                            condiciones</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h4 class="modal-title   rounded-2">Carrito de compras</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <template v-for="producto of carrito">
+                    <div
+                        class="modalCard p-3 mb-2 gap-2 d-flex flex-column flex-sm-row justify-content-between align-items-center w-100 h-100 rounded-2">
+                        <img class="rounded-4" :src="producto.imagen" style="width: 10em; height: 10em;">
+                        <div
+                            class="cardBody d-flex flex-column justify-content-between align-items-center w-50">
+                            <h5 class="text-center fw-bold">{{producto.producto}}</h5>
+                            <div
+                                class="d-flex flex-sm-column gap-2 justify-content-evenly align-items-center h-100 w-100">
+                                <p class="m-0 fw-bold">Valor por unidad: ${{producto.precio}}</p>
+                                <p class="m-0 fw-bold">Total: ${{producto.precio * producto.cantidad}}</p>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <p class="m-0 fw-bold">Cantidad:</p>
+                                    <button @click="agregarAlCarrito(producto)" type="button"
+                                        class="btn  btn-sm btn-secondary">
+                                        +
+                                    </button>
+                                    <span>{{producto.cantidad}}</span>
+                                    <button @click="quitarDelCarrito(producto)" type="button"
+                                        class="btn  btn-sm btn-secondary">
+                                        -
+                                    </button>
+                                </div>
 
-                              </div>
-                          </div>
-                      </div>
-                  </template>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-              </div>
-          </div>
-      </div>
-  </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <h3 class="fw-bolder">Total a pagar: ${{totalPrecio}}</h3 class=>
+                <button type="button" @click="vaciarCarrito" class="btn btn-success" data-bs-dismiss="modal">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+</div>
   <footer class="pie-pagina">
     <div class="grupo-1">
         <div class="box direction">
