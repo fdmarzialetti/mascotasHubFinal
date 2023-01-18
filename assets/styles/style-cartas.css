@@ -44,6 +44,11 @@ h5 {
     font-size: 16px
 }
 
+/* .cata-background {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.799), rgba(255, 255, 255, 0.897)), url(https://img.freepik.com/vector-premium/huellas-mascotas_608527-1168.jpg?w=740);
+    background-size: contain;
+} */
+
 .modal-header {
     background-color: orange;
 }
