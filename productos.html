@@ -18,46 +18,41 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--VUE-->
 </head>
 
+
 <body id="app" class="body-color d-flex flex-column">
-    <header class="headerNavBar">
-        <section class="section-navBar" >
-            <div class="nav">
-                <img src="./assets/images/mascotas.png" alt="">
-                <div class="nav-bar-items" id="carroDeCompras">
-                    <a href="" data-bs-toggle="modal" data-bs-target="#myModal">
-                        <i class="fa-solid fa-cart-shopping">
-                            <span v-if="cantidadEnCarrito>0" class="badge rounded-pill bg-danger">{{cantidadEnCarrito}}</span>
-                        </i>
-                    </a>
-                    <a href=""><i class="fa-solid fa-user"></i></a>
-                    <a href=""><i class="fa-solid fa-star"></i></a>
-                </div>
-            </div>
+   <header>
+        <section class="section-navBar2">
+            <div class="nav2">
+              <img src="./assets/images/mascotas.png"  alt="">
+              <nav class="navbar navBar2 navbar-expand-lg navbar-light">
+                <div class="container-fluid container-fluid-2 navBarcontainer-fluid-2/2">
+                  <button class="navbar-toggler boton-nav-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse collapse-navbar2" id="navbarNavAltMarkup">
+                    <div class="navbar-nav contenedor-de-ancors-nav2">
+                      <a class="nav-bar-a-nav2 navBarHome" aria-current="page" href="./index.html">inicio</a>
+                      <a class="nav-bar-a-nav3" href="#">nuestros productos</a>
+                      <a class="nav-bar-a-nav4" href="./farmacia.html">farmacia</a>
+                      <a class="nav-bar-a-nav5" href="./jugueteria.html" tabindex="-1" aria-disabled="true">jugueteria</a>
+                      <a class="nav-bar-a-nav6 navBarNuestrosProductos" href="./contacto.html">contacto</a>
+                    </div>
+                    <div class="nav-bar-items-nav2">
+                        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href=""><i class="fa-solid fa-user"></i></a>
+                        <a href=""><i class="fa-solid fa-star"></i></a>
+                      </div>
+                  </div>
+          </section>
 
             </nav>
             </div>
         </section>
-        <section>
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid container-fluid-2 navBarcontainer-fluid-2">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav d-flex justify-content-start w-100" id="inicio">
-                            <a class="nav-bar-a navBarHome p-0" aria-current="page" href="./index.html">inicio</a>
-                            <a class="nav-bar-a navBarNuestrosProductos p-0" href="./productos.html">nuestros
-                                productos</a>
-                            <a class="nav-bar-a p-0" href="./farmacia.html">farmacia</a>
-                            <a class="nav-bar-a p-0" href="./jugueteria.html" tabindex="-1"
-                                aria-disabled="true">jugueteria</a>
-                            <a class="nav-bar-a p-0" href="./contacto.html">contacto</a>
-        </section>
+      
 
         </div>
         </nav>
+
     </header>
 
     <main style="min-height: 50em;" class="d-flex flex-column">

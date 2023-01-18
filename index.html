@@ -18,32 +18,84 @@
 
 </head>
 
-<body id="app" class="d-flex flex-column">
-    <header class="headerNavBar">
 
-        <section class="section-navBar">
-            <div class="nav">
-                <img src="./assets/images/mascotas.png" alt="">
-                <nav class="navbar navbar-light padre-buscadorNav">
-                    <div class="container-fluid">
-
-
-
+<body class="d-flex flex-column">
+    <header>
+        <div class="fixed">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.4mdGP8tXnP88mI8yIY1fnQHaHa&pid=Api&P=0" alt="">
+        </div>
+        <section class="section-navBar2">
+            <div class="nav2">
+              <img src="https://media.discordapp.net/attachments/1049367005242867833/1065269394416078868/mascotasSinFondo.png?width=644&height=362"  alt="">
+              <nav class="navbar navBar2 navbar-expand-lg navbar-light">
+                <div class="container-fluid container-fluid-2 navBarcontainer-fluid-2/2">
+                  <button class="navbar-toggler boton-nav-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse collapse-navbar2" id="navbarNavAltMarkup">
+                    <div class="navbar-nav contenedor-de-ancors-nav2">
+                      <a class="nav-bar-a-nav2 navBarHome" aria-current="page" href="#">inicio</a>
+                      <a class="nav-bar-a-nav3" href="./productos.html">nuestros productos</a>
+                      <a class="nav-bar-a-nav4" href="./farmacia.html">farmacia</a>
+                      <a class="nav-bar-a-nav5" href="./jugueteria.html" tabindex="-1" aria-disabled="true">jugueteria</a>
+                      <a class="nav-bar-a-nav6 navBarNuestrosProductos" href="./contacto.html">contacto</a>
                     </div>
-                </nav>
-                <div class="nav-bar-items" id="carroDeCompras">
-                    <a href="" data-bs-toggle="modal" data-bs-target="#myModal">
-                        <i class="fa-solid fa-cart-shopping">
-                            <span v-if="cantidadEnCarrito>0"
-                                class="badge rounded-pill bg-danger">{{cantidadEnCarrito}}</span>
-                        </i>
-                    </a>
-                    <a href=""><i class="fa-solid fa-user"></i></a>
-                    <a href=""><i class="fa-solid fa-star"></i></a>
+                    <div class="nav-bar-items-nav2">
+                        <a href="" data-bs-toggle="modal" data-bs-target="#myModal">
+                            <i class="fa-solid fa-cart-shopping">
+                                <!-- <span v-if="cantidadEnCarrito>0" class="badge rounded-pill bg-danger">{{cantidadEnCarrito}}</span> -->
+                            </i>
+                        </a>
+                        <a href=""><i class="fa-solid fa-user"></i></a>
+                        <a href=""><i class="fa-solid fa-star"></i></a>
+                      </div>
+                  </div>
                 </div>
-
+              </nav>
+              
             </div>
-            <!-- MODAL -->
+          </section>
+    </header>
+
+<body id="app" class="d-flex flex-column">
+     <header>
+        <div class="fixed">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.4mdGP8tXnP88mI8yIY1fnQHaHa&pid=Api&P=0" alt="">
+        </div>
+        <section class="section-navBar2">
+            <div class="nav2">
+              <img src="https://media.discordapp.net/attachments/1049367005242867833/1065269394416078868/mascotasSinFondo.png?width=644&height=362"  alt="">
+              <nav class="navbar navBar2 navbar-expand-lg navbar-light">
+                <div class="container-fluid container-fluid-2 navBarcontainer-fluid-2/2">
+                  <button class="navbar-toggler boton-nav-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse collapse-navbar2" id="navbarNavAltMarkup">
+                    <div class="navbar-nav contenedor-de-ancors-nav2">
+                      <a class="nav-bar-a-nav2 navBarHome" aria-current="page" href="#">inicio</a>
+                      <a class="nav-bar-a-nav3" href="./productos.html">nuestros productos</a>
+                      <a class="nav-bar-a-nav4" href="./farmacia.html">farmacia</a>
+                      <a class="nav-bar-a-nav5" href="./jugueteria.html" tabindex="-1" aria-disabled="true">jugueteria</a>
+                      <a class="nav-bar-a-nav6 navBarNuestrosProductos" href="./contacto.html">contacto</a>
+                    </div>
+                    <div class="nav-bar-items-nav2">
+                        <a href="" data-bs-toggle="modal" data-bs-target="#myModal">
+                            <i class="fa-solid fa-cart-shopping">
+                                <!-- <span v-if="cantidadEnCarrito>0" class="badge rounded-pill bg-danger">{{cantidadEnCarrito}}</span> -->
+                            </i>
+                        </a>
+                        <a href=""><i class="fa-solid fa-user"></i></a>
+                        <a href=""><i class="fa-solid fa-star"></i></a>
+                      </div>
+                  </div>
+                </div>
+              </nav>
+              
+            </div>
+          </section>
+    </header>
+
+  <!-- MODAL -->
             <div class="modal" id="myModal">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -86,31 +138,6 @@
                 </div>
             </div>
             </div>
-        </section>
-        <section>
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid container-fluid-2 navBarcontainer-fluid-2">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav" id="inicio">
-                            <a class="nav-bar-a navBarHome" aria-current="page" href="./index.html">inicio</a>
-                            <a class="nav-bar-a navBarNuestrosProductos" href="./productos.html">nuestros productos</a>
-                            <a class="nav-bar-a" href="./farmacia.html">farmacia</a>
-                            <a class="nav-bar-a" href="./jugueteria.html" tabindex="-1"
-                                aria-disabled="true">jugueteria</a>
-                            <a class="nav-bar-a" href="./contacto.html">contacto</a>
-                        </div>
-                    </div>  
-                </div>
-            </nav>
-        </section>
-
-        
-    </header>
 
     <main>
         <div class="home-box-title">
