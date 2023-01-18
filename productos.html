@@ -32,7 +32,7 @@
                     </div>
                 </nav>
                 <div class="nav-bar-items" id="carroDeCompras">
-                    <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href=""data-bs-toggle="modal" data-bs-target="#myModal"><i class="fa-solid fa-cart-shopping"></i></a>
                     <a href=""><i class="fa-solid fa-user"></i></a>
                     <a href=""><i class="fa-solid fa-star"></i></a>
                 </div>
@@ -77,69 +77,57 @@
 
         <!------------------------------SECCION CARTAS------------------------------------------->
 
-        <div class="d-flex flex-column align-items-center w-100">
-
-            <!-- MODAL BUTTON -->
-            <div id="btn-back-to-top" class="d-flex flex-column align-items-center">
-                <button type="button"
-                    :class="carrito.length===0?'btn disabled btn-lg btn-secondary bg-gradient':'btn btn-lg  btn-success bg-gradient'"
-                    data-bs-toggle="modal" data-bs-target="#myModal">
-                    <div class="d-flex flex-column">
-                        <span :class="carrito.length===0?'fw-bolder fs-6':'fw-bolder text-white fs-6'"></span>
-                        <i class="fa-solid fa-cart-shopping"><span></span></i>
+        <!-- MODAL -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header ">
+                        <h4 class="modal-title bg-success bg-gradient rounded-2">Carrito</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-                </button>
-            </div>
-
-            <!-- MODAL -->
-            <div class="modal" id="myModal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header ">
-                            <h4 class="modal-title bg-success bg-gradient rounded-2">Carrito</h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-                        <div class="modal-body">
-                            <template v-for="producto of carrito">
+                    <div class="modal-body">
+                        <template v-for="producto of carrito">
+                            <div
+                                class="modalCard p-3 mb-2 gap-2 d-flex flex-column flex-sm-row justify-content-between align-items-center w-100 h-100 rounded-2">
+                                <img class="rounded-4" :src="producto.imagen" style="width: 10em; height: 10em;">
                                 <div
-                                    class="modalCard p-3 mb-2 gap-2 d-flex flex-column flex-sm-row justify-content-between align-items-center w-100 h-100 rounded-2">
-                                    <img class="rounded-4" :src="producto.imagen" style="width: 10em; height: 10em;">
+                                    class="cardBody d-flex flex-column justify-content-between align-items-center w-50">
+                                    <h5 class="text-center fw-bold">{{producto.producto}}</h5>
                                     <div
-                                        class="cardBody d-flex flex-column justify-content-between align-items-center w-50">
-                                        <h5 class="text-center fw-bold">{{producto.producto}}</h5>
-                                        <div
-                                            class="d-flex flex-sm-column gap-2 justify-content-evenly align-items-center h-100 w-100">
-                                            <p class="m-0 fw-bold">Price: ${{producto.precio * producto.cantidad}}</p>
-                                            <div class="d-flex gap-2 align-items-center">
-                                                <button @click="agregarAlCarrito(producto)" type="button"
-                                                    class="btn  btn-sm btn-secondary">
-                                                    +
-                                                </button>
-                                                <span>{{producto.cantidad}}</span>
-                                                <button @click="quitarDelCarrito(producto)" type="button"
-                                                    class="btn  btn-sm btn-secondary">
-                                                    -
-                                                </button>
-                                            </div>
-
+                                        class="d-flex flex-sm-column gap-2 justify-content-evenly align-items-center h-100 w-100">
+                                        <p class="m-0 fw-bold">Price: ${{producto.precio * producto.cantidad}}</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <button @click="agregarAlCarrito(producto)" type="button"
+                                                class="btn  btn-sm btn-secondary">
+                                                +
+                                            </button>
+                                            <span>{{producto.cantidad}}</span>
+                                            <button @click="quitarDelCarrito(producto)" type="button"
+                                                class="btn  btn-sm btn-secondary">
+                                                -
+                                            </button>
                                         </div>
+
                                     </div>
                                 </div>
-                            </template>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                        </div>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="d-flex flex-column align-items-center col">
+
             <div class="CONTENEDOR-CARTAS d-flex flex-column flex-lg-row gap-2 justify-content-evenly col-10 col-lg-12">
-                <div class="FILTROS d-flex flex-column align-items-center w-100">
+                <div class="FILTROS d-flex flex-column align-items-center col col-lg-3">
                     <!--BARRA DE BUSQUEDA-->
                     
-                        <div class="d-flex col-12 col-sm-10 col-md-8" role="search">
-                            <label for="" class="col-12 col-lg-2 form-label">Buscar: 
-                            <input @input="filtro" v-model="valorBusqueda" id="searchBar" class="form-control"
+                        <div class="d-flex col-12 col-sm-10 col-md-8 col-lg-8" role="search">
+                            <label for="" class="col-12 form-label">Buscar: 
+                            <input @input="filtro" v-model="valorBusqueda" id="searchBar" class="col-lg-8 form-control"
                                 placeholder="Search" aria-label="Search">
                             </label>
                         </div>
@@ -173,36 +161,7 @@
                                 $2000</label>
 
                         </div>
-                        <div class="w-100 d-flex flex-column">
-                            <label for="" class="form-label">Precios:</label>
-                            <div @change="probar" class="btn-group" role="group"
-                                aria-label="Basic checkbox toggle button group">
-                                <input v-model="modalPrecio" type="radio" class="btn-check" name="btnradio"
-                                    id="btncheck1" autocomplete="off">
-                                <label class="btn btn-outline-success" value="1000" for="btncheck1">Hasta $1000</label>
-
-                                <input v-model="modalPrecio" type="radio" class="btn-check" name="btnradio"
-                                    id="btncheck2" autocomplete="off">
-                                <label class="btn btn-outline-success" for="btncheck2">De $1000 a $2000</label>
-
-                                <input v-model="modalPrecio" type="radio" class="btn-check" name="btnradio"
-                                    id="btncheck3" autocomplete="off">
-                                <label class="btn btn-outline-success" for="btncheck3">Mas de $2000</label>
-                            </div>
-                        </div>
-                        <div class="w-100 d-flex flex-column">
-                            <label for="" class="form-label">Mascota:</label>
-                            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                                <input type="radio" class="btn-check" name="btnradio2" id="btnTodas" autocomplete="off">
-                                <label class="btn btn-outline-success" for="btnTodas">Todas</label>
-
-                                <input type="radio" class="btn-check" name="btnradio2" id="btnPerro" autocomplete="off">
-                                <label class="btn btn-outline-success" for="btnPerro">Perro</label>
-
-                                <input type="radio" class="btn-check" name="btnradio2" id="btnGato" autocomplete="off">
-                                <label class="btn btn-outline-success" for="btnGato">Gato</label>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
                 <!--CARTAS-->
@@ -210,48 +169,33 @@
                     <div class="d-flex justify-content-center w-100">
                         <div class="col w-100">
                             <template v-for="producto of datos">
-                                <div class="row p-2 bg-white border rounded mt-2">
+                                <div class="row col-lg-11 p-2 bg-white border rounded mt-2">
                                     <div class="col-md-3 mt-1"><img
                                             class="img-fluid img-responsive rounded product-image" :src=producto.imagen>
                                     </div>
                                     <div class="col-md-6 mt-1">
                                         <h5>{{producto.producto}}</h5>
-                                        <div class="d-flex flex-row">
-                                            <div class="ratings mr-2"><i class="fa fa-star"></i><i
-                                                    class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                    class="fa fa-star"></i></div>
-                                            <span>Cantidad en carrito: {{producto.cantidad}}</span>
-
-                                        </div>
                                         <span>Disponibles: {{producto.disponibles}}</span>
-                                        <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span
-                                                class="dot"></span><span>Light
-                                                weight</span><span class="dot"></span><span>Best finish<br></span></div>
-                                        <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span
-                                                class="dot"></span><span>For
-                                                men</span><span class="dot"></span><span>Casual<br></span></div>
-                                        <p class="text-justify text-truncate para mb-0">There are many variations of
-                                            passages of
-                                            Lorem Ipsum available, but the majority have suffered alteration in some
-                                            form,
-                                            by
-                                            injected humour, or randomised words which don't look even slightly
-                                            believable.<br><br>
-                                        </p>
-                                    </div>
-                                    <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                                         <div class="d-flex flex-row align-items-center">
                                             <h4 class="mr-1">${{producto.precio}}</h4><span class="strike-text"></span>
                                         </div>
-                                        <h6 class="text-success">Free shipping</h6>
-                                        <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm"
-                                                type="button">Details</button>
-                                            <button @click="agregarAlCarrito(producto)"
-                                                class="btn btn-outline-primary btn-sm mt-2" type="button">Add to
-                                                wishlist</button>
+                                        
+        
+                                        <div v-if='producto.disponibles===0'>
+                                            <h6 class="text-danger">Sin Stock!</h6>
                                         </div>
-                                        <button @click="quitarDelCarrito(producto)"
-                                            class="btn btn-outline-danger btn-sm mt-2" type="button">Remove</button>
+                                        <div v-if="producto.disponibles<=5&&producto.disponibles!==0">
+                                            <h6 class="text-danger">Ultimas unidades!</h6>
+                                        </div>
+                                        <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm"
+                                                type="button">Detalles</button>
+                                            <button @click="agregarAlCarrito(producto)"
+                                                :class="producto.disponibles!==0?'btn btn-outline-success btn-sm mt-2':'btn btn-outline-secundary disabled btn-sm mt-2'" type="button">Agregar al carrito</button>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                                        
                                     </div>
                                 </div>
                             </template>
@@ -305,7 +249,7 @@
                 <div class="footer-container">
                     <h5>CUENTA</h5>
                     <a href="#carroDeCompras">Mi Cuenta</a>
-                    <a href="#carroDeCompras">Mis Compras</a>
+                    <a href="#carroDeCompras" data-bs-toggle="modal" data-bs-target="#myModal">Mis Compras</a>
                     <a href="#carroDeCompras">Carrito</a>
                     <a href="#inicio">Tienda</a>
                 </div>
