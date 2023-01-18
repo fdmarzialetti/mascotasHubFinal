@@ -35,7 +35,7 @@
                     <a href="" data-bs-toggle="modal" data-bs-target="#myModal">
                         
                         <i class="fa-solid fa-cart-shopping">
-                            <span v-if="carrito.length>0"class="badge rounded-pill bg-danger">{{carrito.length}}</span>
+                            <span v-if="cantidadEnCarrito>0&&loadData"class="badge rounded-pill bg-danger">{{cantidadEnCarrito}}</span>
                         </i>
                     </a>
                     <a href=""><i class="fa-solid fa-user"></i></a>

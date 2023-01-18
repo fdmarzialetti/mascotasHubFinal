@@ -8,6 +8,7 @@ createApp({
             datos: [],
             valorBusqueda:"",
             modelCategoria:"todas",
+            cantidadEnCarrito:0,
             modelPrecio:[],
             loadData: true
         }
@@ -29,8 +30,13 @@ createApp({
 
     },
     methods: {
-        probar:function(){
-            console.log(this)
+        calcularCantidad:function(){
+            let carritoLocal = JSON.parse(localStorage.getItem("carrito"))
+            let total=0
+            carritoLocal.forEach(p=>{
+                total+=p.cantidad
+            })
+            this.cantidadEnCarrito=total
         },
         cargaPorPagina: function () {
             let cargaProductos = JSON.parse(localStorage.getItem("carrito"))
@@ -65,6 +71,7 @@ createApp({
         },
         filtro: function () {
             let filtroPorBusqueda = this.productos.filter(p => p.producto.toLowerCase().includes(this.valorBusqueda.toLowerCase()))
+            
             this.datos=filtroPorBusqueda
         },
         quitarDelCarrito: function (producto) {
@@ -79,6 +86,7 @@ createApp({
                 }
                 localStorage.setItem("carrito", JSON.stringify(this.carrito))
             }
+            this.calcularCantidad()
         },
         agregarAlCarrito: function (producto) {
             if (producto.disponibles > 0) {
@@ -90,6 +98,7 @@ createApp({
             }
             localStorage.setItem("carrito", JSON.stringify(this.carrito))
             datosLocales = JSON.parse(localStorage.getItem("carrito"))
+            this.calcularCantidad()
         }
     }
 }).mount('#app')
