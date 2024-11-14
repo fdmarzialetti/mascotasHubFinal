@@ -19,7 +19,10 @@ createApp({
         }
     },
     created() {
-        fetch("https://mindhub-xj03.onrender.com/api/petshop")
+        fetch("https://mindhub-xj03.onrender.com/api/petshop", {
+            method: 'GET',
+            mode: 'no-cors'
+        })
             .then(res => res.json())
             .then(data => {
                 this.productos = data
